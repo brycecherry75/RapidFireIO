@@ -4,12 +4,19 @@ RapidFireIO, a high speed I/O library for Arduino by Bryce Cherry
 
 Tested on Uno and Due boards
 
+v1.0 First release
+v1.1 Added functions referring to hardware pin labels (useful for non-Arduino boards)
+
 FEATURES:
 Set/Clear/Toggle for both output pin states (if set to an input, internal pullup for certain boards) and Input/Output states of the pin
 Boards and derivatives supported: Uno inclduing ATmega8, Mega, Leonardo, Zero (supports direct pin and data direction toggle), Due, Gemma and others based on the ATtiny25/45/85
-All pins which support pinState/digitalWrite/digitalRead operations are supported
+Pins with Arduino labels which support pinState/digitalWrite/digitalRead operations are supported and any pins with a hardware label can be used even without an assigned Arduino label
 
-How to use ("0" can be changed to any valid Arduino pin number - analog pins must use "Ax" e.g. "A0" for Analog 0):
+The ATmega8/48/88/168/328 shares pins on the oscillator (PB6/PB7) and Reset (PC6) pins; fuses must be set as appropriate when using these pins for any other purpose.
+On the Due, PC0 is used for erasing the contents of the Flash.
+On the ATtiny25/45/85, PB5 is shared with Reset; fuses must be set as appropriate when using this pin for any other purpose.
+
+How to use ("0" can be changed to any valid Arduino pin number or hardware pin label (e.g. PB_0) - analog pins must use "Ax" e.g. "A0" for Analog 0 if using Arduino pin numbers):
 
 SetPin0() will set Pin 0 HIGH if already set to an output or for certain boards toggle pullup if set to an input
 ClearPin0() will set Pin 0 LOW if already set to an output or for certain boards toggle pullup if set to an input
