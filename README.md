@@ -4,8 +4,8 @@ RapidFireIO, a high speed I/O library for Arduino by Bryce Cherry
 
 Tested on Uno and Due boards
 
-v1.0 First release
-v1.1 Added functions referring to hardware pin labels (useful for non-Arduino boards)
+1.0.0 First release
+1.1.0 Added functions referring to hardware pin labels (useful for non-Arduino boards)
 
 FEATURES:
 Set/Clear/Toggle for both output pin states (if set to an input, internal pullup for certain boards) and Input/Output states of the pin
