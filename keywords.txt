@@ -1,5 +1,14 @@
 RapidFireIO	KEYWORD1
 init	KEYWORD2
+HSdigitalSet	KEYWORD2
+HSdigitalClear	KEYWORD2
+HSdigitalToggle	KEYWORD2
+HSsetInputState	KEYWORD2
+HSsetOutputState	KEYWORD2
+HStoggleIOstate	KEYWORD2
+HSpinMode	KEYWORD2
+HSdigitalWrite	KEYWORD2
+HSdigitalRead	KEYWORD2
 SetPin0	KEYWORD2
 SetPin1	KEYWORD2
 SetPin2	KEYWORD2

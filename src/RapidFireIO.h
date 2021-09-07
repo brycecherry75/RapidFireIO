@@ -314,6 +314,17 @@ class RapidFireIOclass {
     uint8_t ReadPinPD5();
     uint8_t ReadPinPD6();
     uint8_t ReadPinPD7();
+
+    void HSdigitalSet(uint8_t pin);
+    void HSdigitalClear(uint8_t pin);
+    void HSdigitalToggle(uint8_t pin);
+    void HSsetInputState(uint8_t pin);
+    void HSsetOutputState(uint8_t pin);
+    void HStoggleIOstate(uint8_t pin);
+    void HSpinMode(uint8_t pin, uint8_t state);
+    void HSdigitalWrite(uint8_t pin, uint8_t state);
+    uint8_t HSdigitalRead(uint8_t pin);
+
     void init();
 };
 
@@ -1413,6 +1424,17 @@ class RapidFireIOclass {
     uint8_t ReadPinPL5();
     uint8_t ReadPinPL6();
     uint8_t ReadPinPL7();
+
+    void HSdigitalSet(uint8_t pin);
+    void HSdigitalClear(uint8_t pin);
+    void HSdigitalToggle(uint8_t pin);
+    void HSsetInputState(uint8_t pin);
+    void HSsetOutputState(uint8_t pin);
+    void HStoggleIOstate(uint8_t pin);
+    void HSpinMode(uint8_t pin, uint8_t state);
+    void HSdigitalWrite(uint8_t pin, uint8_t state);
+    uint8_t HSdigitalRead(uint8_t pin);
+
     void init();
 };
 
@@ -1742,6 +1764,17 @@ class RapidFireIOclass {
     uint8_t ReadPinPF5();
     uint8_t ReadPinPF6();
     uint8_t ReadPinPF7();
+
+    void HSdigitalSet(uint8_t pin);
+    void HSdigitalClear(uint8_t pin);
+    void HSdigitalToggle(uint8_t pin);
+    void HSsetInputState(uint8_t pin);
+    void HSsetOutputState(uint8_t pin);
+    void HStoggleIOstate(uint8_t pin);
+    void HSpinMode(uint8_t pin, uint8_t state);
+    void HSdigitalWrite(uint8_t pin, uint8_t state);
+    uint8_t HSdigitalRead(uint8_t pin);
+
     void init();
 };
 
@@ -2155,6 +2188,17 @@ class RapidFireIOclass {
     uint32_t ReadPinPB11();
     uint32_t ReadPinPB22();
     uint32_t ReadPinPB23();
+
+    void HSdigitalSet(uint8_t pin);
+    void HSdigitalClear(uint8_t pin);
+    void HSdigitalToggle(uint8_t pin);
+    void HSsetInputState(uint8_t pin);
+    void HSsetOutputState(uint8_t pin);
+    void HStoggleIOstate(uint8_t pin);
+    void HSpinMode(uint8_t pin, uint8_t state);
+    void HSdigitalWrite(uint8_t pin, uint8_t state);
+    uint32_t HSdigitalRead(uint8_t pin);
+
     void init();
 };
 
@@ -3376,6 +3420,17 @@ class RapidFireIOclass {
     uint32_t ReadPinPD8();
     uint32_t ReadPinPD9();
     uint32_t ReadPinPD10();
+
+    void HSdigitalSet(uint8_t pin);
+    void HSdigitalClear(uint8_t pin);
+    void HSdigitalToggle(uint8_t pin);
+    void HSsetInputState(uint8_t pin);
+    void HSsetOutputState(uint8_t pin);
+    void HStoggleIOstate(uint8_t pin);
+    void HSpinMode(uint8_t pin, uint8_t state);
+    void HSdigitalWrite(uint8_t pin, uint8_t state);
+    uint32_t HSdigitalRead(uint8_t pin);
+
     void init();
 };
 
@@ -3467,6 +3522,17 @@ class RapidFireIOclass {
     uint8_t ReadPinPB3();
     uint8_t ReadPinPB4();
     uint8_t ReadPinPB5();
+
+    void HSdigitalSet(uint8_t pin);
+    void HSdigitalClear(uint8_t pin);
+    void HSdigitalToggle(uint8_t pin);
+    void HSsetInputState(uint8_t pin);
+    void HSsetOutputState(uint8_t pin);
+    void HStoggleIOstate(uint8_t pin);
+    void HSpinMode(uint8_t pin, uint8_t state);
+    void HSdigitalWrite(uint8_t pin, uint8_t state);
+    uint8_t HSdigitalRead(uint8_t pin);
+
     void init();
 };
 

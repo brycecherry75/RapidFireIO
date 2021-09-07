@@ -1215,6 +1215,489 @@ uint8_t RapidFireIOclass::ReadPinPD7() {
   uint8_t data = PIND; data &= 0x80; return data;
 }
 
+void RapidFireIOclass::HSdigitalSet(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      PORTD |= 0x01;
+      break;
+    case 1:
+      PORTD |= 0x02;
+      break;
+    case 2:
+      PORTD |= 0x04;
+      break;
+    case 3:
+      PORTD |= 0x08;
+      break;
+    case 4:
+      PORTD |= 0x10;
+      break;
+    case 5:
+      PORTD |= 0x20;
+      break;
+    case 6:
+      PORTD |= 0x40;
+      break;
+    case 7:
+      PORTD |= 0x80;
+      break;
+    case 8:
+      PORTB |= 0x01;
+      break;
+    case 9:
+      PORTB |= 0x02;
+      break;
+    case 10:
+      PORTB |= 0x04;
+      break;
+    case 11:
+      PORTB |= 0x08;
+      break;
+    case 12:
+      PORTB |= 0x10;
+      break;
+    case 13:
+      PORTB |= 0x20;
+      break;
+    case A0:
+      PORTC |= 0x01;
+      break;
+    case A1:
+      PORTC |= 0x02;
+      break;
+    case A2:
+      PORTC |= 0x04;
+      break;
+    case A3:
+      PORTC |= 0x08;
+      break;
+    case A4:
+      PORTC |= 0x10;
+      break;
+    case A5:
+      PORTC |= 0x20;
+      break;
+  }
+}
+
+void RapidFireIOclass::HSdigitalClear(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      PORTD &= (~0x01);
+      break;
+    case 1:
+      PORTD &= (~0x02);
+      break;
+    case 2:
+      PORTD &= (~0x04);
+      break;
+    case 3:
+      PORTD &= (~0x08);
+      break;
+    case 4:
+      PORTD &= (~0x10);
+      break;
+    case 5:
+      PORTD &= (~0x20);
+      break;
+    case 6:
+      PORTD &= (~0x40);
+      break;
+    case 7:
+      PORTD &= (~0x80);
+      break;
+    case 8:
+      PORTB &= (~0x01);
+      break;
+    case 9:
+      PORTB &= (~0x02);
+      break;
+    case 10:
+      PORTB &= (~0x04);
+      break;
+    case 11:
+      PORTB &= (~0x08);
+      break;
+    case 12:
+      PORTB &= (~0x10);
+      break;
+    case 13:
+      PORTB &= (~0x20);
+      break;
+    case A0:
+      PORTC &= (~0x01);
+      break;
+    case A1:
+      PORTC &= (~0x02);
+      break;
+    case A2:
+      PORTC &= (~0x04);
+      break;
+    case A3:
+      PORTC &= (~0x08);
+      break;
+    case A4:
+      PORTC &= (~0x10);
+      break;
+    case A5:
+      PORTC &= (~0x20);
+      break;
+  }
+}
+
+void RapidFireIOclass::HSdigitalToggle(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      PORTD ^= 0x01;
+      break;
+    case 1:
+      PORTD ^= 0x02;
+      break;
+    case 2:
+      PORTD ^= 0x04;
+      break;
+    case 3:
+      PORTD ^= 0x08;
+      break;
+    case 4:
+      PORTD ^= 0x10;
+      break;
+    case 5:
+      PORTD ^= 0x20;
+      break;
+    case 6:
+      PORTD ^= 0x40;
+      break;
+    case 7:
+      PORTD ^= 0x80;
+      break;
+    case 8:
+      PORTB ^= 0x01;
+      break;
+    case 9:
+      PORTB ^= 0x02;
+      break;
+    case 10:
+      PORTB ^= 0x04;
+      break;
+    case 11:
+      PORTB ^= 0x08;
+      break;
+    case 12:
+      PORTB ^= 0x10;
+      break;
+    case 13:
+      PORTB ^= 0x20;
+      break;
+    case A0:
+      PORTC ^= 0x01;
+      break;
+    case A1:
+      PORTC ^= 0x02;
+      break;
+    case A2:
+      PORTC ^= 0x04;
+      break;
+    case A3:
+      PORTC ^= 0x08;
+      break;
+    case A4:
+      PORTC ^= 0x10;
+      break;
+    case A5:
+      PORTC ^= 0x20;
+      break;
+  }
+}
+
+void RapidFireIOclass::HSsetInputState(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      DDRD &= (~0x01);
+      break;
+    case 1:
+      DDRD &= (~0x02);
+      break;
+    case 2:
+      DDRD &= (~0x04);
+      break;
+    case 3:
+      DDRD &= (~0x08);
+      break;
+    case 4:
+      DDRD &= (~0x10);
+      break;
+    case 5:
+      DDRD &= (~0x20);
+      break;
+    case 6:
+      DDRD &= (~0x40);
+      break;
+    case 7:
+      DDRD &= (~0x80);
+      break;
+    case 8:
+      DDRB &= (~0x01);
+      break;
+    case 9:
+      DDRB &= (~0x02);
+      break;
+    case 10:
+      DDRB &= (~0x04);
+      break;
+    case 11:
+      DDRB &= (~0x08);
+      break;
+    case 12:
+      DDRB &= (~0x10);
+      break;
+    case 13:
+      DDRB &= (~0x20);
+      break;
+    case A0:
+      DDRC &= (~0x01);
+      break;
+    case A1:
+      DDRC &= (~0x02);
+      break;
+    case A2:
+      DDRC &= (~0x04);
+      break;
+    case A3:
+      DDRC &= (~0x08);
+      break;
+    case A4:
+      DDRC &= (~0x10);
+      break;
+    case A5:
+      DDRC &= (~0x20);
+      break;
+  }
+}
+
+void RapidFireIOclass::HSsetOutputState(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      DDRD |= 0x01;
+      break;
+    case 1:
+      DDRD |= 0x02;
+      break;
+    case 2:
+      DDRD |= 0x04;
+      break;
+    case 3:
+      DDRD |= 0x08;
+      break;
+    case 4:
+      DDRD |= 0x10;
+      break;
+    case 5:
+      DDRD |= 0x20;
+      break;
+    case 6:
+      DDRD |= 0x40;
+      break;
+    case 7:
+      DDRD |= 0x80;
+      break;
+    case 8:
+      DDRB |= 0x01;
+      break;
+    case 9:
+      DDRB |= 0x02;
+      break;
+    case 10:
+      DDRB |= 0x04;
+      break;
+    case 11:
+      DDRB |= 0x08;
+      break;
+    case 12:
+      DDRB |= 0x10;
+      break;
+    case 13:
+      DDRB |= 0x20;
+      break;
+    case A0:
+      DDRC |= 0x01;
+      break;
+    case A1:
+      DDRC |= 0x02;
+      break;
+    case A2:
+      DDRC |= 0x04;
+      break;
+    case A3:
+      DDRC |= 0x08;
+      break;
+    case A4:
+      DDRC |= 0x10;
+      break;
+    case A5:
+      DDRC |= 0x20;
+      break;
+  }
+}
+
+void RapidFireIOclass::HStoggleIOstate(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      DDRD ^= 0x01;
+      break;
+    case 1:
+      DDRD ^= 0x02;
+      break;
+    case 2:
+      DDRD ^= 0x04;
+      break;
+    case 3:
+      DDRD ^= 0x08;
+      break;
+    case 4:
+      DDRD ^= 0x10;
+      break;
+    case 5:
+      DDRD ^= 0x20;
+      break;
+    case 6:
+      DDRD ^= 0x40;
+      break;
+    case 7:
+      DDRD ^= 0x80;
+      break;
+    case 8:
+      DDRB ^= 0x01;
+      break;
+    case 9:
+      DDRB ^= 0x02;
+      break;
+    case 10:
+      DDRB ^= 0x04;
+      break;
+    case 11:
+      DDRB ^= 0x08;
+      break;
+    case 12:
+      DDRB ^= 0x10;
+      break;
+    case 13:
+      DDRB ^= 0x20;
+      break;
+    case A0:
+      DDRC ^= 0x01;
+      break;
+    case A1:
+      DDRC ^= 0x02;
+      break;
+    case A2:
+      DDRC ^= 0x04;
+      break;
+    case A3:
+      DDRC ^= 0x08;
+      break;
+    case A4:
+      DDRC ^= 0x10;
+      break;
+    case A5:
+      DDRC ^= 0x20;
+      break;
+  }
+}
+
+void RapidFireIOclass::HSpinMode(uint8_t pin, uint8_t state) {
+  if (state == INPUT || state == INPUT_PULLUP) {
+    HSsetInputState(pin);
+    if (state == INPUT_PULLUP) {
+      HSdigitalWrite(pin, HIGH);
+    }
+  }
+  else if (state == OUTPUT) {
+    HSsetOutputState(pin);
+  }
+}
+
+void RapidFireIOclass::HSdigitalWrite(uint8_t pin, uint8_t state) {
+  if (state == LOW) {
+    HSdigitalClear(pin);
+  }
+  else {
+    HSdigitalSet(pin);
+  }
+}
+
+uint8_t RapidFireIOclass::HSdigitalRead(uint8_t pin) {
+  uint8_t data = 0;
+  switch (pin) {
+    case 0:
+      data = PIND; data &= 0x01;
+      break;
+    case 1:
+      data = PIND; data &= 0x02;
+      break;
+    case 2:
+      data = PIND; data &= 0x04;
+      break;
+    case 3:
+      data = PIND; data &= 0x08;
+      break;
+    case 4:
+      data = PIND; data &= 0x10;
+      break;
+    case 5:
+      data = PIND; data &= 0x20;
+      break;
+    case 6:
+      data = PIND; data &= 0x40;
+      break;
+    case 7:
+      data = PIND; data &= 0x80;
+      break;
+    case 8:
+      data = PINB; data &= 0x01;
+      break;
+    case 9:
+      data = PINB; data &= 0x02;
+      break;
+    case 10:
+      data = PINB; data &= 0x04;
+      break;
+    case 11:
+      data = PINB; data &= 0x08;
+      break;
+    case 12:
+      data = PINB; data &= 0x10;
+      break;
+    case 13:
+      data = PINB; data &= 0x20;
+      break;
+    case A0:
+      data = PINC; data &= 0x01;
+      break;
+    case A1:
+      data = PINC; data &= 0x02;
+      break;
+    case A2:
+      data = PINC; data &= 0x04;
+      break;
+    case A3:
+      data = PINC; data &= 0x08;
+      break;
+    case A4:
+      data = PINC; data &= 0x10;
+      break;
+    case A5:
+      data = PINC; data &= 0x20;
+      break;
+  }
+  if (data != 0) {
+    return HIGH;
+  }
+  else {
+    return LOW;
+  }
+}
+
 void RapidFireIOclass::init() {
 }
 
@@ -5591,6 +6074,1539 @@ uint8_t RapidFireIOclass::ReadPinPL7() {
   uint8_t data = PINL; data &= 0x80; return data;
 }
 
+void RapidFireIOclass::HSdigitalSet(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      PORTE |= 0x01;
+      break;
+    case 1:
+      PORTE |= 0x02;
+      break;
+    case 2:
+      PORTE |= 0x10;
+      break;
+    case 3:
+      PORTE |= 0x20;
+      break;
+    case 4:
+      PORTG |= 0x20;
+      break;
+    case 5:
+      PORTE |= 0x08;
+      break;
+    case 6:
+      PORTH |= 0x08;
+      break;
+    case 7:
+      PORTH |= 0x10;
+      break;
+    case 8:
+      PORTH |= 0x20;
+      break;
+    case 9:
+      PORTH |= 0x40;
+      break;
+    case 10:
+      PORTB |= 0x10;
+      break;
+    case 11:
+      PORTB |= 0x20;
+      break;
+    case 12:
+      PORTB |= 0x40;
+      break;
+    case 13:
+      PORTB |= 0x80;
+      break;
+    case 14:
+      PORTJ |= 0x02;
+      break;
+    case 15:
+      PORTJ |= 0x01;
+      break;
+    case 16:
+      PORTH |= 0x02;
+      break;
+    case 17:
+      PORTH |= 0x01;
+      break;
+    case 18:
+      PORTD |= 0x08;
+      break;
+    case 19:
+      PORTD |= 0x04;
+      break;
+    case 20:
+      PORTD |= 0x02;
+      break;
+    case 21:
+      PORTD |= 0x01;
+      break;
+    case 22:
+      PORTA |= 0x01;
+      break;
+    case 23:
+      PORTA |= 0x02;
+      break;
+    case 24:
+      PORTA |= 0x04;
+      break;
+    case 25:
+      PORTA |= 0x08;
+      break;
+    case 26:
+      PORTA |= 0x10;
+      break;
+    case 27:
+      PORTA |= 0x20;
+      break;
+    case 28:
+      PORTA |= 0x40;
+      break;
+    case 29:
+      PORTA |= 0x80;
+      break;
+    case 30:
+      PORTC |= 0x80;
+      break;
+    case 31:
+      PORTC |= 0x40;
+      break;
+    case 32:
+      PORTC |= 0x20;
+      break;
+    case 33:
+      PORTC |= 0x10;
+      break;
+    case 34:
+      PORTC |= 0x08;
+      break;
+    case 35:
+      PORTC |= 0x04;
+      break;
+    case 36:
+      PORTC |= 0x02;
+      break;
+    case 37:
+      PORTC |= 0x01;
+      break;
+    case 38:
+      PORTD |= 0x80;
+      break;
+    case 39:
+      PORTG |= 0x04;
+      break;
+    case 40:
+      PORTG |= 0x02;
+      break;
+    case 41:
+      PORTG |= 0x01;
+      break;
+    case 42:
+      PORTL |= 0x80;
+      break;
+    case 43:
+      PORTL |= 0x40;
+      break;
+    case 44:
+      PORTL |= 0x20;
+      break;
+    case 45:
+      PORTL |= 0x10;
+      break;
+    case 46:
+      PORTL |= 0x08;
+      break;
+    case 47:
+      PORTL |= 0x04;
+      break;
+    case 48:
+      PORTL |= 0x02;
+      break;
+    case 49:
+      PORTL |= 0x01;
+      break;
+    case 50:
+      PORTB |= 0x08;
+      break;
+    case 51:
+      PORTB |= 0x04;
+      break;
+    case 52:
+      PORTB |= 0x02;
+      break;
+    case 53:
+      PORTB |= 0x01;
+      break;
+    case A0:
+      PORTF |= 0x01;
+      break;
+    case A1:
+      PORTF |= 0x02;
+      break;
+    case A2:
+      PORTF |= 0x04;
+      break;
+    case A3:
+      PORTF |= 0x08;
+      break;
+    case A4:
+      PORTF |= 0x10;
+      break;
+    case A5:
+      PORTF |= 0x20;
+      break;
+    case A6:
+      PORTF |= 0x40;
+      break;
+    case A7:
+      PORTF |= 0x80;
+      break;
+    case A8:
+      PORTK |= 0x01;
+      break;
+    case A9:
+      PORTK |= 0x02;
+      break;
+    case A10:
+      PORTK |= 0x04;
+      break;
+    case A11:
+      PORTK |= 0x08;
+      break;
+    case A12:
+      PORTK |= 0x10;
+      break;
+    case A13:
+      PORTK |= 0x20;
+      break;
+    case A14:
+      PORTK |= 0x40;
+      break;
+    case A15:
+      PORTK |= 0x80;
+      break;
+  }
+}
+
+void RapidFireIOclass::HSdigitalClear(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      PORTE &= (~0x01);
+      break;
+    case 1:
+      PORTE &= (~0x02);
+      break;
+    case 2:
+      PORTE &= (~0x10);
+      break;
+    case 3:
+      PORTE &= (~0x20);
+      break;
+    case 4:
+      PORTG &= (~0x20);
+      break;
+    case 5:
+      PORTE &= (~0x08);
+      break;
+    case 6:
+      PORTH &= (~0x08);
+      break;
+    case 7:
+      PORTH &= (~0x10);
+      break;
+    case 8:
+      PORTH &= (~0x20);
+      break;
+    case 9:
+      PORTH &= (~0x40);
+      break;
+    case 10:
+      PORTB &= (~0x10);
+      break;
+    case 11:
+      PORTB &= (~0x20);
+      break;
+    case 12:
+      PORTB &= (~0x40);
+      break;
+    case 13:
+      PORTB &= (~0x80);
+      break;
+    case 14:
+      PORTJ &= (~0x02);
+      break;
+    case 15:
+      PORTJ &= (~0x01);
+      break;
+    case 16:
+      PORTH &= (~0x02);
+      break;
+    case 17:
+      PORTH &= (~0x01);
+      break;
+    case 18:
+      PORTD &= (~0x08);
+      break;
+    case 19:
+      PORTD &= (~0x04);
+      break;
+    case 20:
+      PORTD &= (~0x02);
+      break;
+    case 21:
+      PORTD &= (~0x01);
+      break;
+    case 22:
+      PORTA &= (~0x01);
+      break;
+    case 23:
+      PORTA &= (~0x02);
+      break;
+    case 24:
+      PORTA &= (~0x04);
+      break;
+    case 25:
+      PORTA &= (~0x08);
+      break;
+    case 26:
+      PORTA &= (~0x10);
+      break;
+    case 27:
+      PORTA &= (~0x20);
+      break;
+    case 28:
+      PORTA &= (~0x40);
+      break;
+    case 29:
+      PORTA &= (~0x80);
+      break;
+    case 30:
+      PORTC &= (~0x80);
+      break;
+    case 31:
+      PORTC &= (~0x40);
+      break;
+    case 32:
+      PORTC &= (~0x20);
+      break;
+    case 33:
+      PORTC &= (~0x10);
+      break;
+    case 34:
+      PORTC &= (~0x08);
+      break;
+    case 35:
+      PORTC &= (~0x04);
+      break;
+    case 36:
+      PORTC &= (~0x02);
+      break;
+    case 37:
+      PORTC &= (~0x01);
+      break;
+    case 38:
+      PORTD &= (~0x80);
+      break;
+    case 39:
+      PORTG &= (~0x04);
+      break;
+    case 40:
+      PORTG &= (~0x02);
+      break;
+    case 41:
+      PORTG &= (~0x01);
+      break;
+    case 42:
+      PORTL &= (~0x80);
+      break;
+    case 43:
+      PORTL &= (~0x40);
+      break;
+    case 44:
+      PORTL &= (~0x20);
+      break;
+    case 45:
+      PORTL &= (~0x10);
+      break;
+    case 46:
+      PORTL &= (~0x08);
+      break;
+    case 47:
+      PORTL &= (~0x04);
+      break;
+    case 48:
+      PORTL &= (~0x02);
+      break;
+    case 49:
+      PORTL &= (~0x01);
+      break;
+    case 50:
+      PORTB &= (~0x08);
+      break;
+    case 51:
+      PORTB &= (~0x04);
+      break;
+    case 52:
+      PORTB &= (~0x02);
+      break;
+    case 53:
+      PORTB &= (~0x01);
+      break;
+    case A0:
+      PORTF &= (~0x01);
+      break;
+    case A1:
+      PORTF &= (~0x02);
+      break;
+    case A2:
+      PORTF &= (~0x04);
+      break;
+    case A3:
+      PORTF &= (~0x08);
+      break;
+    case A4:
+      PORTF &= (~0x10);
+      break;
+    case A5:
+      PORTF &= (~0x20);
+      break;
+    case A6:
+      PORTF &= (~0x40);
+      break;
+    case A7:
+      PORTF &= (~0x80);
+      break;
+    case A8:
+      PORTK &= (~0x01);
+      break;
+    case A9:
+      PORTK &= (~0x02);
+      break;
+    case A10:
+      PORTK &= (~0x04);
+      break;
+    case A11:
+      PORTK &= (~0x08);
+      break;
+    case A12:
+      PORTK &= (~0x10);
+      break;
+    case A13:
+      PORTK &= (~0x20);
+      break;
+    case A14:
+      PORTK &= (~0x40);
+      break;
+    case A15:
+      PORTK &= (~0x80);
+      break;
+  }
+}
+
+void RapidFireIOclass::HSdigitalToggle(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      PORTE ^= 0x01;
+      break;
+    case 1:
+      PORTE ^= 0x02;
+      break;
+    case 2:
+      PORTE ^= 0x10;
+      break;
+    case 3:
+      PORTE ^= 0x20;
+      break;
+    case 4:
+      PORTG ^= 0x20;
+      break;
+    case 5:
+      PORTE ^= 0x08;
+      break;
+    case 6:
+      PORTH ^= 0x08;
+      break;
+    case 7:
+      PORTH ^= 0x10;
+      break;
+    case 8:
+      PORTH ^= 0x20;
+      break;
+    case 9:
+      PORTH ^= 0x40;
+      break;
+    case 10:
+      PORTB ^= 0x10;
+      break;
+    case 11:
+      PORTB ^= 0x20;
+      break;
+    case 12:
+      PORTB ^= 0x40;
+      break;
+    case 13:
+      PORTB ^= 0x80;
+      break;
+    case 14:
+      PORTJ ^= 0x02;
+      break;
+    case 15:
+      PORTJ ^= 0x01;
+      break;
+    case 16:
+      PORTH ^= 0x02;
+      break;
+    case 17:
+      PORTH ^= 0x01;
+      break;
+    case 18:
+      PORTD ^= 0x08;
+      break;
+    case 19:
+      PORTD ^= 0x04;
+      break;
+    case 20:
+      PORTD ^= 0x02;
+      break;
+    case 21:
+      PORTD ^= 0x01;
+      break;
+    case 22:
+      PORTA ^= 0x01;
+      break;
+    case 23:
+      PORTA ^= 0x02;
+      break;
+    case 24:
+      PORTA ^= 0x04;
+      break;
+    case 25:
+      PORTA ^= 0x08;
+      break;
+    case 26:
+      PORTA ^= 0x10;
+      break;
+    case 27:
+      PORTA ^= 0x20;
+      break;
+    case 28:
+      PORTA ^= 0x40;
+      break;
+    case 29:
+      PORTA ^= 0x80;
+      break;
+    case 30:
+      PORTC ^= 0x80;
+      break;
+    case 31:
+      PORTC ^= 0x40;
+      break;
+    case 32:
+      PORTC ^= 0x20;
+      break;
+    case 33:
+      PORTC ^= 0x10;
+      break;
+    case 34:
+      PORTC ^= 0x08;
+      break;
+    case 35:
+      PORTC ^= 0x04;
+      break;
+    case 36:
+      PORTC ^= 0x02;
+      break;
+    case 37:
+      PORTC ^= 0x01;
+      break;
+    case 38:
+      PORTD ^= 0x80;
+      break;
+    case 39:
+      PORTG ^= 0x04;
+      break;
+    case 40:
+      PORTG ^= 0x02;
+      break;
+    case 41:
+      PORTG ^= 0x01;
+      break;
+    case 42:
+      PORTL ^= 0x80;
+      break;
+    case 43:
+      PORTL ^= 0x40;
+      break;
+    case 44:
+      PORTL ^= 0x20;
+      break;
+    case 45:
+      PORTL ^= 0x10;
+      break;
+    case 46:
+      PORTL ^= 0x08;
+      break;
+    case 47:
+      PORTL ^= 0x04;
+      break;
+    case 48:
+      PORTL ^= 0x02;
+      break;
+    case 49:
+      PORTL ^= 0x01;
+      break;
+    case 50:
+      PORTB ^= 0x08;
+      break;
+    case 51:
+      PORTB ^= 0x04;
+      break;
+    case 52:
+      PORTB ^= 0x02;
+      break;
+    case 53:
+      PORTB ^= 0x01;
+      break;
+    case A0:
+      PORTF ^= 0x01;
+      break;
+    case A1:
+      PORTF ^= 0x02;
+      break;
+    case A2:
+      PORTF ^= 0x04;
+      break;
+    case A3:
+      PORTF ^= 0x08;
+      break;
+    case A4:
+      PORTF ^= 0x10;
+      break;
+    case A5:
+      PORTF ^= 0x20;
+      break;
+    case A6:
+      PORTF ^= 0x40;
+      break;
+    case A7:
+      PORTF ^= 0x80;
+      break;
+    case A8:
+      PORTK ^= 0x01;
+      break;
+    case A9:
+      PORTK ^= 0x02;
+      break;
+    case A10:
+      PORTK ^= 0x04;
+      break;
+    case A11:
+      PORTK ^= 0x08;
+      break;
+    case A12:
+      PORTK ^= 0x10;
+      break;
+    case A13:
+      PORTK ^= 0x20;
+      break;
+    case A14:
+      PORTK ^= 0x40;
+      break;
+    case A15:
+      PORTK ^= 0x80;
+      break;
+  }
+}
+
+void RapidFireIOclass::HSsetInputState(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      DDRE &= (~0x01);
+      break;
+    case 1:
+      DDRE &= (~0x02);
+      break;
+    case 2:
+      DDRE &= (~0x10);
+      break;
+    case 3:
+      DDRE &= (~0x20);
+      break;
+    case 4:
+      DDRG &= (~0x20);
+      break;
+    case 5:
+      DDRE &= (~0x08);
+      break;
+    case 6:
+      DDRH &= (~0x08);
+      break;
+    case 7:
+      DDRH &= (~0x10);
+      break;
+    case 8:
+      DDRH &= (~0x20);
+      break;
+    case 9:
+      DDRH &= (~0x40);
+      break;
+    case 10:
+      DDRB &= (~0x10);
+      break;
+    case 11:
+      DDRB &= (~0x20);
+      break;
+    case 12:
+      DDRB &= (~0x40);
+      break;
+    case 13:
+      DDRB &= (~0x80);
+      break;
+    case 14:
+      DDRJ &= (~0x02);
+      break;
+    case 15:
+      DDRJ &= (~0x01);
+      break;
+    case 16:
+      DDRH &= (~0x02);
+      break;
+    case 17:
+      DDRH &= (~0x01);
+      break;
+    case 18:
+      DDRD &= (~0x08);
+      break;
+    case 19:
+      DDRD &= (~0x04);
+      break;
+    case 20:
+      DDRD &= (~0x02);
+      break;
+    case 21:
+      DDRD &= (~0x01);
+      break;
+    case 22:
+      DDRA &= (~0x01);
+      break;
+    case 23:
+      DDRA &= (~0x02);
+      break;
+    case 24:
+      DDRA &= (~0x04);
+      break;
+    case 25:
+      DDRA &= (~0x08);
+      break;
+    case 26:
+      DDRA &= (~0x10);
+      break;
+    case 27:
+      DDRA &= (~0x20);
+      break;
+    case 28:
+      DDRA &= (~0x40);
+      break;
+    case 29:
+      DDRA &= (~0x80);
+      break;
+    case 30:
+      DDRC &= (~0x80);
+      break;
+    case 31:
+      DDRC &= (~0x40);
+      break;
+    case 32:
+      DDRC &= (~0x20);
+      break;
+    case 33:
+      DDRC &= (~0x10);
+      break;
+    case 34:
+      DDRC &= (~0x08);
+      break;
+    case 35:
+      DDRC &= (~0x04);
+      break;
+    case 36:
+      DDRC &= (~0x02);
+      break;
+    case 37:
+      DDRC &= (~0x01);
+      break;
+    case 38:
+      DDRD &= (~0x80);
+      break;
+    case 39:
+      DDRG &= (~0x04);
+      break;
+    case 40:
+      DDRG &= (~0x02);
+      break;
+    case 41:
+      DDRG &= (~0x01);
+      break;
+    case 42:
+      DDRL &= (~0x80);
+      break;
+    case 43:
+      DDRL &= (~0x40);
+      break;
+    case 44:
+      DDRL &= (~0x20);
+      break;
+    case 45:
+      DDRL &= (~0x10);
+      break;
+    case 46:
+      DDRL &= (~0x08);
+      break;
+    case 47:
+      DDRL &= (~0x04);
+      break;
+    case 48:
+      DDRL &= (~0x02);
+      break;
+    case 49:
+      DDRL &= (~0x01);
+      break;
+    case 50:
+      DDRB &= (~0x08);
+      break;
+    case 51:
+      DDRB &= (~0x04);
+      break;
+    case 52:
+      DDRB &= (~0x02);
+      break;
+    case 53:
+      DDRB &= (~0x01);
+      break;
+    case A0:
+      DDRF &= (~0x01);
+      break;
+    case A1:
+      DDRF &= (~0x02);
+      break;
+    case A2:
+      DDRF &= (~0x04);
+      break;
+    case A3:
+      DDRF &= (~0x08);
+      break;
+    case A4:
+      DDRF &= (~0x10);
+      break;
+    case A5:
+      DDRF &= (~0x20);
+      break;
+    case A6:
+      DDRF &= (~0x40);
+      break;
+    case A7:
+      DDRF &= (~0x80);
+      break;
+    case A8:
+      DDRK &= (~0x01);
+      break;
+    case A9:
+      DDRK &= (~0x02);
+      break;
+    case A10:
+      DDRK &= (~0x04);
+      break;
+    case A11:
+      DDRK &= (~0x08);
+      break;
+    case A12:
+      DDRK &= (~0x10);
+      break;
+    case A13:
+      DDRK &= (~0x20);
+      break;
+    case A14:
+      DDRK &= (~0x40);
+      break;
+    case A15:
+      DDRK &= (~0x80);
+      break;
+  }
+}
+
+void RapidFireIOclass::HSsetOutputState(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      DDRE |= 0x01;
+      break;
+    case 1:
+      DDRE |= 0x02;
+      break;
+    case 2:
+      DDRE |= 0x10;
+      break;
+    case 3:
+      DDRE |= 0x20;
+      break;
+    case 4:
+      DDRG |= 0x20;
+      break;
+    case 5:
+      DDRE |= 0x08;
+      break;
+    case 6:
+      DDRH |= 0x08;
+      break;
+    case 7:
+      DDRH |= 0x10;
+      break;
+    case 8:
+      DDRH |= 0x20;
+      break;
+    case 9:
+      DDRH |= 0x40;
+      break;
+    case 10:
+      DDRB |= 0x10;
+      break;
+    case 11:
+      DDRB |= 0x20;
+      break;
+    case 12:
+      DDRB |= 0x40;
+      break;
+    case 13:
+      DDRB |= 0x80;
+      break;
+    case 14:
+      DDRJ |= 0x02;
+      break;
+    case 15:
+      DDRJ |= 0x01;
+      break;
+    case 16:
+      DDRH |= 0x02;
+      break;
+    case 17:
+      DDRH |= 0x01;
+      break;
+    case 18:
+      DDRD |= 0x08;
+      break;
+    case 19:
+      DDRD |= 0x04;
+      break;
+    case 20:
+      DDRD |= 0x02;
+      break;
+    case 21:
+      DDRD |= 0x01;
+      break;
+    case 22:
+      DDRA |= 0x01;
+      break;
+    case 23:
+      DDRA |= 0x02;
+      break;
+    case 24:
+      DDRA |= 0x04;
+      break;
+    case 25:
+      DDRA |= 0x08;
+      break;
+    case 26:
+      DDRA |= 0x10;
+      break;
+    case 27:
+      DDRA |= 0x20;
+      break;
+    case 28:
+      DDRA |= 0x40;
+      break;
+    case 29:
+      DDRA |= 0x80;
+      break;
+    case 30:
+      DDRC |= 0x80;
+      break;
+    case 31:
+      DDRC |= 0x40;
+      break;
+    case 32:
+      DDRC |= 0x20;
+      break;
+    case 33:
+      DDRC |= 0x10;
+      break;
+    case 34:
+      DDRC |= 0x08;
+      break;
+    case 35:
+      DDRC |= 0x04;
+      break;
+    case 36:
+      DDRC |= 0x02;
+      break;
+    case 37:
+      DDRC |= 0x01;
+      break;
+    case 38:
+      DDRD |= 0x80;
+      break;
+    case 39:
+      DDRG |= 0x04;
+      break;
+    case 40:
+      DDRG |= 0x02;
+      break;
+    case 41:
+      DDRG |= 0x01;
+      break;
+    case 42:
+      DDRL |= 0x80;
+      break;
+    case 43:
+      DDRL |= 0x40;
+      break;
+    case 44:
+      DDRL |= 0x20;
+      break;
+    case 45:
+      DDRL |= 0x10;
+      break;
+    case 46:
+      DDRL |= 0x08;
+      break;
+    case 47:
+      DDRL |= 0x04;
+      break;
+    case 48:
+      DDRL |= 0x02;
+      break;
+    case 49:
+      DDRL |= 0x01;
+      break;
+    case 50:
+      DDRB |= 0x08;
+      break;
+    case 51:
+      DDRB |= 0x04;
+      break;
+    case 52:
+      DDRB |= 0x02;
+      break;
+    case 53:
+      DDRB |= 0x01;
+      break;
+    case A0:
+      DDRF |= 0x01;
+      break;
+    case A1:
+      DDRF |= 0x02;
+      break;
+    case A2:
+      DDRF |= 0x04;
+      break;
+    case A3:
+      DDRF |= 0x08;
+      break;
+    case A4:
+      DDRF |= 0x10;
+      break;
+    case A5:
+      DDRF |= 0x20;
+      break;
+    case A6:
+      DDRF |= 0x40;
+      break;
+    case A7:
+      DDRF |= 0x80;
+      break;
+    case A8:
+      DDRK |= 0x01;
+      break;
+    case A9:
+      DDRK |= 0x02;
+      break;
+    case A10:
+      DDRK |= 0x04;
+      break;
+    case A11:
+      DDRK |= 0x08;
+      break;
+    case A12:
+      DDRK |= 0x10;
+      break;
+    case A13:
+      DDRK |= 0x20;
+      break;
+    case A14:
+      DDRK |= 0x40;
+      break;
+    case A15:
+      DDRK |= 0x80;
+      break;
+  }
+}
+
+void RapidFireIOclass::HStoggleIOstate(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      DDRE ^= 0x01;
+      break;
+    case 1:
+      DDRE ^= 0x02;
+      break;
+    case 2:
+      DDRE ^= 0x10;
+      break;
+    case 3:
+      DDRE ^= 0x20;
+      break;
+    case 4:
+      DDRG ^= 0x20;
+      break;
+    case 5:
+      DDRE ^= 0x08;
+      break;
+    case 6:
+      DDRH ^= 0x08;
+      break;
+    case 7:
+      DDRH ^= 0x10;
+      break;
+    case 8:
+      DDRH ^= 0x20;
+      break;
+    case 9:
+      DDRH ^= 0x40;
+      break;
+    case 10:
+      DDRB ^= 0x10;
+      break;
+    case 11:
+      DDRB ^= 0x20;
+      break;
+    case 12:
+      DDRB ^= 0x40;
+      break;
+    case 13:
+      DDRB ^= 0x80;
+      break;
+    case 14:
+      DDRJ ^= 0x02;
+      break;
+    case 15:
+      DDRJ ^= 0x01;
+      break;
+    case 16:
+      DDRH ^= 0x02;
+      break;
+    case 17:
+      DDRH ^= 0x01;
+      break;
+    case 18:
+      DDRD ^= 0x08;
+      break;
+    case 19:
+      DDRD ^= 0x04;
+      break;
+    case 20:
+      DDRD ^= 0x02;
+      break;
+    case 21:
+      DDRD ^= 0x01;
+      break;
+    case 22:
+      DDRA ^= 0x01;
+      break;
+    case 23:
+      DDRA ^= 0x02;
+      break;
+    case 24:
+      DDRA ^= 0x04;
+      break;
+    case 25:
+      DDRA ^= 0x08;
+      break;
+    case 26:
+      DDRA ^= 0x10;
+      break;
+    case 27:
+      DDRA ^= 0x20;
+      break;
+    case 28:
+      DDRA ^= 0x40;
+      break;
+    case 29:
+      DDRA ^= 0x80;
+      break;
+    case 30:
+      DDRC ^= 0x80;
+      break;
+    case 31:
+      DDRC ^= 0x40;
+      break;
+    case 32:
+      DDRC ^= 0x20;
+      break;
+    case 33:
+      DDRC ^= 0x10;
+      break;
+    case 34:
+      DDRC ^= 0x08;
+      break;
+    case 35:
+      DDRC ^= 0x04;
+      break;
+    case 36:
+      DDRC ^= 0x02;
+      break;
+    case 37:
+      DDRC ^= 0x01;
+      break;
+    case 38:
+      DDRD ^= 0x80;
+      break;
+    case 39:
+      DDRG ^= 0x04;
+      break;
+    case 40:
+      DDRG ^= 0x02;
+      break;
+    case 41:
+      DDRG ^= 0x01;
+      break;
+    case 42:
+      DDRL ^= 0x80;
+      break;
+    case 43:
+      DDRL ^= 0x40;
+      break;
+    case 44:
+      DDRL ^= 0x20;
+      break;
+    case 45:
+      DDRL ^= 0x10;
+      break;
+    case 46:
+      DDRL ^= 0x08;
+      break;
+    case 47:
+      DDRL ^= 0x04;
+      break;
+    case 48:
+      DDRL ^= 0x02;
+      break;
+    case 49:
+      DDRL ^= 0x01;
+      break;
+    case 50:
+      DDRB ^= 0x08;
+      break;
+    case 51:
+      DDRB ^= 0x04;
+      break;
+    case 52:
+      DDRB ^= 0x02;
+      break;
+    case 53:
+      DDRB ^= 0x01;
+      break;
+    case A0:
+      DDRF ^= 0x01;
+      break;
+    case A1:
+      DDRF ^= 0x02;
+      break;
+    case A2:
+      DDRF ^= 0x04;
+      break;
+    case A3:
+      DDRF ^= 0x08;
+      break;
+    case A4:
+      DDRF ^= 0x10;
+      break;
+    case A5:
+      DDRF ^= 0x20;
+      break;
+    case A6:
+      DDRF ^= 0x40;
+      break;
+    case A7:
+      DDRF ^= 0x80;
+      break;
+    case A8:
+      DDRK ^= 0x01;
+      break;
+    case A9:
+      DDRK ^= 0x02;
+      break;
+    case A10:
+      DDRK ^= 0x04;
+      break;
+    case A11:
+      DDRK ^= 0x08;
+      break;
+    case A12:
+      DDRK ^= 0x10;
+      break;
+    case A13:
+      DDRK ^= 0x20;
+      break;
+    case A14:
+      DDRK ^= 0x40;
+      break;
+    case A15:
+      DDRK ^= 0x80;
+      break;
+  }
+}
+
+void RapidFireIOclass::HSpinMode(uint8_t pin, uint8_t state) {
+  if (state == INPUT || state == INPUT_PULLUP) {
+    HSsetInputState(pin);
+    if (state == INPUT_PULLUP) {
+      HSdigitalWrite(pin, HIGH);
+    }
+  }
+  else if (state == OUTPUT) {
+    HSsetOutputState(pin);
+  }
+}
+
+void RapidFireIOclass::HSdigitalWrite(uint8_t pin, uint8_t state) {
+  if (state == LOW) {
+    HSdigitalClear(pin);
+  }
+  else {
+    HSdigitalSet(pin);
+  }
+}
+
+uint8_t RapidFireIOclass::HSdigitalRead(uint8_t pin) {
+  uint8_t data = 0;
+  switch (pin) {
+    case 0:
+      data = PINE; data &= 0x01;
+      break;
+    case 1:
+      data = PINE; data &= 0x02;
+      break;
+    case 2:
+      data = PINE; data &= 0x10;
+      break;
+    case 3:
+      data = PINE; data &= 0x20;
+      break;
+    case 4:
+      data = PING; data &= 0x20;
+      break;
+    case 5:
+      data = PINE; data &= 0x08;
+      break;
+    case 6:
+      data = PINH; data &= 0x08;
+      break;
+    case 7:
+      data = PINH; data &= 0x10;
+      break;
+    case 8:
+      data = PINH; data &= 0x20;
+      break;
+    case 9:
+      data = PINH; data &= 0x40;
+      break;
+    case 10:
+      data = PINB; data &= 0x10;
+      break;
+    case 11:
+      data = PINB; data &= 0x20;
+      break;
+    case 12:
+      data = PINB; data &= 0x40;
+      break;
+    case 13:
+      data = PINB; data &= 0x80;
+      break;
+    case 14:
+      data = PINJ; data &= 0x02;
+      break;
+    case 15:
+      data = PINJ; data &= 0x01;
+      break;
+    case 16:
+      data = PINH; data &= 0x02;
+      break;
+    case 17:
+      data = PINH; data &= 0x01;
+      break;
+    case 18:
+      data = PIND; data &= 0x08;
+      break;
+    case 19:
+      data = PIND; data &= 0x04;
+      break;
+    case 20:
+      data = PIND; data &= 0x02;
+      break;
+    case 21:
+      data = PIND; data &= 0x01;
+      break;
+    case 22:
+      data = PINA; data &= 0x01;
+      break;
+    case 23:
+      data = PINA; data &= 0x02;
+      break;
+    case 24:
+      data = PINA; data &= 0x04;
+      break;
+    case 25:
+      data = PINA; data &= 0x08;
+      break;
+    case 26:
+      data = PINA; data &= 0x10;
+      break;
+    case 27:
+      data = PINA; data &= 0x20;
+      break;
+    case 28:
+      data = PINA; data &= 0x40;
+      break;
+    case 29:
+      data = PINA; data &= 0x80;
+      break;
+    case 30:
+      data = PINC; data &= 0x80;
+      break;
+    case 31:
+      data = PINC; data &= 0x40;
+      break;
+    case 32:
+      data = PINC; data &= 0x20;
+      break;
+    case 33:
+      data = PINC; data &= 0x10;
+      break;
+    case 34:
+      data = PINC; data &= 0x08;
+      break;
+    case 35:
+      data = PINC; data &= 0x04;
+      break;
+    case 36:
+      data = PINC; data &= 0x02;
+      break;
+    case 37:
+      data = PINC; data &= 0x01;
+      break;
+    case 38:
+      data = PIND; data &= 0x80;
+      break;
+    case 39:
+      data = PING; data &= 0x04;
+      break;
+    case 40:
+      data = PING; data &= 0x02;
+      break;
+    case 41:
+      data = PING; data &= 0x01;
+      break;
+    case 42:
+      data = PINL; data &= 0x80;
+      break;
+    case 43:
+      data = PINL; data &= 0x40;
+      break;
+    case 44:
+      data = PINL; data &= 0x20;
+      break;
+    case 45:
+      data = PINL; data &= 0x10;
+      break;
+    case 46:
+      data = PINL; data &= 0x08;
+      break;
+    case 47:
+      data = PINL; data &= 0x04;
+      break;
+    case 48:
+      data = PINL; data &= 0x02;
+      break;
+    case 49:
+      data = PINL; data &= 0x01;
+      break;
+    case 50:
+      data = PINB; data &= 0x08;
+      break;
+    case 51:
+      data = PINB; data &= 0x04;
+      break;
+    case 52:
+      data = PINB; data &= 0x02;
+      break;
+    case 53:
+      data = PINB; data &= 0x01;
+      break;
+    case A0:
+      data = PINF; data &= 0x01;
+      break;
+    case A1:
+      data = PINF; data &= 0x02;
+      break;
+    case A2:
+      data = PINF; data &= 0x04;
+      break;
+    case A3:
+      data = PINF; data &= 0x08;
+      break;
+    case A4:
+      data = PINF; data &= 0x10;
+      break;
+    case A5:
+      data = PINF; data &= 0x20;
+      break;
+    case A6:
+      data = PINF; data &= 0x40;
+      break;
+    case A7:
+      data = PINF; data &= 0x80;
+      break;
+    case A8:
+      data = PINK; data &= 0x01;
+      break;
+    case A9:
+      data = PINK; data &= 0x02;
+      break;
+    case A10:
+      data = PINK; data &= 0x04;
+      break;
+    case A11:
+      data = PINK; data &= 0x08;
+      break;
+    case A12:
+      data = PINK; data &= 0x10;
+      break;
+    case A13:
+      data = PINK; data &= 0x20;
+      break;
+    case A14:
+      data = PINK; data &= 0x40;
+      break;
+    case A15:
+      data = PINK; data &= 0x80;
+      break;
+  }
+  if (data == 0) {
+    return LOW;
+  }
+  else {
+    return HIGH;
+  }
+}
+
 void RapidFireIOclass::init() {
 }
 
@@ -6883,6 +8899,489 @@ uint8_t RapidFireIOclass::ReadPinPF6() {
 
 uint8_t RapidFireIOclass::ReadPinPF7() {
   uint8_t data = PINF; data &= 0x80; return data;
+}
+
+void RapidFireIOclass::HSdigitalSet(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      PORTD |= 0x04;
+      break;
+    case 1:
+      PORTD |= 0x08;
+      break;
+    case 2:
+      PORTD |= 0x02;
+      break;
+    case 3:
+      PORTD |= 0x01;
+      break;
+    case 4:
+      PORTD |= 0x10;
+      break;
+    case 5:
+      PORTC |= 0x40;
+      break;
+    case 6:
+      PORTD |= 0x80;
+      break;
+    case 7:
+      PORTE |= 0x40;
+      break;
+    case 8:
+      PORTB |= 0x10;
+      break;
+    case 9:
+      PORTB |= 0x20;
+      break;
+    case 10:
+      PORTB |= 0x40;
+      break;
+    case 11:
+      PORTB |= 0x80;
+      break;
+    case 12:
+      PORTD |= 0x40;
+      break;
+    case 13:
+      PORTC |= 0x80;
+      break;
+    case A0:
+      PORTF |= 0x80;
+      break;
+    case A1:
+      PORTF |= 0x40;
+      break;
+    case A2:
+      PORTF |= 0x20;
+      break;
+    case A3:
+      PORTF |= 0x10;
+      break;
+    case A4:
+      PORTF |= 0x02;
+      break;
+    case A5:
+      PORTF |= 0x01;
+      break;
+  }
+}
+
+void RapidFireIOclass::HSdigitalClear(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      PORTD &= (~0x04);
+      break;
+    case 1:
+      PORTD &= (~0x08);
+      break;
+    case 2:
+      PORTD &= (~0x02);
+      break;
+    case 3:
+      PORTD &= (~0x01);
+      break;
+    case 4:
+      PORTD &= (~0x10);
+      break;
+    case 5:
+      PORTC &= (~0x40);
+      break;
+    case 6:
+      PORTD &= (~0x80);
+      break;
+    case 7:
+      PORTE &= (~0x40);
+      break;
+    case 8:
+      PORTB &= (~0x10);
+      break;
+    case 9:
+      PORTB &= (~0x20);
+      break;
+    case 10:
+      PORTB &= (~0x40);
+      break;
+    case 11:
+      PORTB &= (~0x80);
+      break;
+    case 12:
+      PORTD &= (~0x40);
+      break;
+    case 13:
+      PORTC &= (~0x80);
+      break;
+    case A0:
+      PORTF &= (~0x80);
+      break;
+    case A1:
+      PORTF &= (~0x40);
+      break;
+    case A2:
+      PORTF &= (~0x20);
+      break;
+    case A3:
+      PORTF &= (~0x10);
+      break;
+    case A4:
+      PORTF &= (~0x02);
+      break;
+    case A5:
+      PORTF &= (~0x01);
+      break;
+  }
+}
+
+void RapidFireIOclass::HSdigitalToggle(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      PORTD ^= 0x04;
+      break;
+    case 1:
+      PORTD ^= 0x08;
+      break;
+    case 2:
+      PORTD ^= 0x02;
+      break;
+    case 3:
+      PORTD ^= 0x01;
+      break;
+    case 4:
+      PORTD ^= 0x10;
+      break;
+    case 5:
+      PORTC ^= 0x40;
+      break;
+    case 6:
+      PORTD ^= 0x80;
+      break;
+    case 7:
+      PORTE ^= 0x40;
+      break;
+    case 8:
+      PORTB ^= 0x10;
+      break;
+    case 9:
+      PORTB ^= 0x20;
+      break;
+    case 10:
+      PORTB ^= 0x40;
+      break;
+    case 11:
+      PORTB ^= 0x80;
+      break;
+    case 12:
+      PORTD ^= 0x40;
+      break;
+    case 13:
+      PORTC ^= 0x80;
+      break;
+    case A0:
+      PORTF ^= 0x80;
+      break;
+    case A1:
+      PORTF ^= 0x40;
+      break;
+    case A2:
+      PORTF ^= 0x20;
+      break;
+    case A3:
+      PORTF ^= 0x10;
+      break;
+    case A4:
+      PORTF ^= 0x02;
+      break;
+    case A5:
+      PORTF ^= 0x01;
+      break;
+  }
+}
+
+void RapidFireIOclass::HSsetInputState(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      DDRD &= (~0x04);
+      break;
+    case 1:
+      DDRD &= (~0x08);
+      break;
+    case 2:
+      DDRD &= (~0x02);
+      break;
+    case 3:
+      DDRD &= (~0x01);
+      break;
+    case 4:
+      DDRD &= (~0x10);
+      break;
+    case 5:
+      DDRC &= (~0x40);
+      break;
+    case 6:
+      DDRD &= (~0x80);
+      break;
+    case 7:
+      DDRE &= (~0x40);
+      break;
+    case 8:
+      DDRB &= (~0x10);
+      break;
+    case 9:
+      DDRB &= (~0x20);
+      break;
+    case 10:
+      DDRB &= (~0x40);
+      break;
+    case 11:
+      DDRB &= (~0x80);
+      break;
+    case 12:
+      DDRD &= (~0x40);
+      break;
+    case 13:
+      DDRC &= (~0x80);
+      break;
+    case A0:
+      DDRF &= (~0x80);
+      break;
+    case A1:
+      DDRF &= (~0x40);
+      break;
+    case A2:
+      DDRF &= (~0x20);
+      break;
+    case A3:
+      DDRF &= (~0x10);
+      break;
+    case A4:
+      DDRF &= (~0x02);
+      break;
+    case A5:
+      DDRF &= (~0x01);
+      break;
+  }
+}
+
+void RapidFireIOclass::HSsetOutputState(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      DDRD |= 0x04;
+      break;
+    case 1:
+      DDRD |= 0x08;
+      break;
+    case 2:
+      DDRD |= 0x02;
+      break;
+    case 3:
+      DDRD |= 0x01;
+      break;
+    case 4:
+      DDRD |= 0x10;
+      break;
+    case 5:
+      DDRC |= 0x40;
+      break;
+    case 6:
+      DDRD |= 0x80;
+      break;
+    case 7:
+      DDRE |= 0x40;
+      break;
+    case 8:
+      DDRB |= 0x10;
+      break;
+    case 9:
+      DDRB |= 0x20;
+      break;
+    case 10:
+      DDRB |= 0x40;
+      break;
+    case 11:
+      DDRB |= 0x80;
+      break;
+    case 12:
+      DDRD |= 0x40;
+      break;
+    case 13:
+      DDRC |= 0x80;
+      break;
+    case A0:
+      DDRF |= 0x80;
+      break;
+    case A1:
+      DDRF |= 0x40;
+      break;
+    case A2:
+      DDRF |= 0x20;
+      break;
+    case A3:
+      DDRF |= 0x10;
+      break;
+    case A4:
+      DDRF |= 0x02;
+      break;
+    case A5:
+      DDRF |= 0x01;
+      break;
+  }
+}
+
+void RapidFireIOclass::HStoggleIOstate(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      DDRD ^= 0x04;
+      break;
+    case 1:
+      DDRD ^= 0x08;
+      break;
+    case 2:
+      DDRD ^= 0x02;
+      break;
+    case 3:
+      DDRD ^= 0x01;
+      break;
+    case 4:
+      DDRD ^= 0x10;
+      break;
+    case 5:
+      DDRC ^= 0x40;
+      break;
+    case 6:
+      DDRD ^= 0x80;
+      break;
+    case 7:
+      DDRE ^= 0x40;
+      break;
+    case 8:
+      DDRB ^= 0x10;
+      break;
+    case 9:
+      DDRB ^= 0x20;
+      break;
+    case 10:
+      DDRB ^= 0x40;
+      break;
+    case 11:
+      DDRB ^= 0x80;
+      break;
+    case 12:
+      DDRD ^= 0x40;
+      break;
+    case 13:
+      DDRC ^= 0x80;
+      break;
+    case A0:
+      DDRF ^= 0x80;
+      break;
+    case A1:
+      DDRF ^= 0x40;
+      break;
+    case A2:
+      DDRF ^= 0x20;
+      break;
+    case A3:
+      DDRF ^= 0x10;
+      break;
+    case A4:
+      DDRF ^= 0x02;
+      break;
+    case A5:
+      DDRF ^= 0x01;
+      break;
+  }
+}
+
+void RapidFireIOclass::HSpinMode(uint8_t pin, uint8_t state) {
+  if (state == INPUT || state == INPUT_PULLUP) {
+    HSsetInputState(pin);
+    if (state == INPUT_PULLUP) {
+      HSdigitalWrite(pin, HIGH);
+    }
+  }
+  else if (state == OUTPUT) {
+    HSsetOutputState(pin);
+  }
+}
+
+void RapidFireIOclass::HSdigitalWrite(uint8_t pin, uint8_t state) {
+  if (state == LOW) {
+    HSdigitalClear(pin);
+  }
+  else {
+    HSdigitalSet(pin);
+  }
+}
+
+uint8_t RapidFireIOclass::HSdigitalRead(uint8_t pin) {
+  uint8_t data = 0;
+  switch (pin) {
+    case 0:
+      data = PIND; data &= 0x04;
+      break;
+    case 1:
+      data = PIND; data &= 0x08;
+      break;
+    case 2:
+      data = PIND; data &= 0x02;
+      break;
+    case 3:
+      data = PIND; data &= 0x01;
+      break;
+    case 4:
+      data = PIND; data &= 0x10;
+      break;
+    case 5:
+      data = PINC; data &= 0x40;
+      break;
+    case 6:
+      data = PIND; data &= 0x80;
+      break;
+    case 7:
+      data = PINE; data &= 0x40;
+      break;
+    case 8:
+      data = PINB; data &= 0x10;
+      break;
+    case 9:
+      data = PINB; data &= 0x20;
+      break;
+    case 10:
+      data = PINB; data &= 0x40;
+      break;
+    case 11:
+      data = PINB; data &= 0x80;
+      break;
+    case 12:
+      data = PIND; data &= 0x40;
+      break;
+    case 13:
+      data = PINC; data &= 0x80;
+      break;
+    case A0:
+      data = PINF; data &= 0x80;
+      break;
+    case A1:
+      data = PINF; data &= 0x40;
+      break;
+    case A2:
+      data = PINF; data &= 0x20;
+      break;
+    case A3:
+      data = PINF; data &= 0x10;
+      break;
+    case A4:
+      data = PINF; data &= 0x02;
+      break;
+    case A5:
+      data = PINF; data &= 0x01;
+      break;
+  }
+  if (data == 0) {
+    return LOW;
+  }
+  else {
+    return HIGH;
+  }
 }
 
 void RapidFireIOclass::init() {
@@ -8513,6 +11012,489 @@ uint32_t RapidFireIOclass::ReadPinPB22() {
 
 uint32_t RapidFireIOclass::ReadPinPB23() {
   uint32_t data = REG_PORT_IN1; data &= 0x00800000; return data;
+}
+
+void RapidFireIOclass::HSdigitalSet(uint8_t pin) {
+  switch (pin) {
+    case 0: // PA11
+      REG_PORT_OUTSET0 = 0x00000800;
+      break;
+    case 1: // PA10
+      REG_PORT_OUTSET0 = 0x00000400;
+      break;
+    case 2: // PA14
+      REG_PORT_OUTSET0 = 0x00004000;
+      break;
+    case 3: // PA9
+      REG_PORT_OUTSET0 = 0x00000200;
+      break;
+    case 4: // PA8
+      REG_PORT_OUTSET0 = 0x00000100;
+      break;
+    case 5: // PA15
+      REG_PORT_OUTSET0 = 0x00008000;
+      break;
+    case 6: // PA20
+      REG_PORT_OUTSET0 = 0x00100000;
+      break;
+    case 7: // PA21
+      REG_PORT_OUTSET0 = 0x00200000;
+      break;
+    case 8: // PA6
+      REG_PORT_OUTSET0 = 0x00000040;
+      break;
+    case 9: // PA7
+      REG_PORT_OUTSET0 = 0x00000080;
+      break;
+    case 10: // PA18
+      REG_PORT_OUTSET0 = 0x00040000;
+      break;
+    case 11: // PA16
+      REG_PORT_OUTSET0 = 0x00010000;
+      break;
+    case 12: // PA19
+      REG_PORT_OUTSET0 = 0x00080000;
+      break;
+    case 13: // PA17
+      REG_PORT_OUTSET0 = 0x00020000;
+      break;
+    case A0: // PA2
+      REG_PORT_OUTSET0 = 0x00000004;
+      break;
+    case A1: // PB8
+      REG_PORT_OUTSET1 = 0x00000100;
+      break;
+    case A2: // PB9
+      REG_PORT_OUTSET1 = 0x00000200;
+      break;
+    case A3: // PA4
+      REG_PORT_OUTSET0 = 0x00000010;
+      break;
+    case A4: // PA5
+      REG_PORT_OUTSET0 = 0x00000020;
+      break;
+    case A5: // PB2
+      REG_PORT_OUTSET1 = 0x00000004;
+      break;
+  }
+}
+
+void RapidFireIOclass::HSdigitalClear(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      REG_PORT_OUTCLR0 = 0x00000800;
+      break;
+    case 1:
+      REG_PORT_OUTCLR0 = 0x00000400;
+      break;
+    case 2:
+      REG_PORT_OUTCLR0 = 0x00004000;
+      break;
+    case 3:
+      REG_PORT_OUTCLR0 = 0x00000200;
+      break;
+    case 4:
+      REG_PORT_OUTCLR0 = 0x00000100;
+      break;
+    case 5:
+      REG_PORT_OUTCLR0 = 0x00008000;
+      break;
+    case 6:
+      REG_PORT_OUTCLR0 = 0x00100000;
+      break;
+    case 7:
+      REG_PORT_OUTCLR0 = 0x00200000;
+      break;
+    case 8:
+      REG_PORT_OUTCLR0 = 0x00000040;
+      break;
+    case 9:
+      REG_PORT_OUTCLR0 = 0x00000080;
+      break;
+    case 10:
+      REG_PORT_OUTCLR0 = 0x00040000;
+      break;
+    case 11:
+      REG_PORT_OUTCLR0 = 0x00010000;
+      break;
+    case 12:
+      REG_PORT_OUTCLR0 = 0x00080000;
+      break;
+    case 13:
+      REG_PORT_OUTCLR0 = 0x00020000;
+      break;
+    case A0:
+      REG_PORT_OUTCLR0 = 0x00000004;
+      break;
+    case A1:
+      REG_PORT_OUTCLR1 = 0x00000100;
+      break;
+    case A2:
+      REG_PORT_OUTCLR1 = 0x00000200;
+      break;
+    case A3:
+      REG_PORT_OUTCLR0 = 0x00000010;
+      break;
+    case A4:
+      REG_PORT_OUTCLR0 = 0x00000020;
+      break;
+    case A5:
+      REG_PORT_OUTCLR1 = 0x00000004;
+      break;
+  }
+}
+
+void RapidFireIOclass::HSdigitalToggle(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      REG_PORT_OUTTGL0 = 0x00000800;
+      break;
+    case 1:
+      REG_PORT_OUTTGL0 = 0x00000400;
+      break;
+    case 2:
+      REG_PORT_OUTTGL0 = 0x00004000;
+      break;
+    case 3:
+      REG_PORT_OUTTGL0 = 0x00000200;
+      break;
+    case 4:
+      REG_PORT_OUTTGL0 = 0x00000100;
+      break;
+    case 5:
+      REG_PORT_OUTTGL0 = 0x00008000;
+      break;
+    case 6:
+      REG_PORT_OUTTGL0 = 0x00100000;
+      break;
+    case 7:
+      REG_PORT_OUTTGL0 = 0x00200000;
+      break;
+    case 8:
+      REG_PORT_OUTTGL0 = 0x00000040;
+      break;
+    case 9:
+      REG_PORT_OUTTGL0 = 0x00000080;
+      break;
+    case 10:
+      REG_PORT_OUTTGL0 = 0x00040000;
+      break;
+    case 11:
+      REG_PORT_OUTTGL0 = 0x00010000;
+      break;
+    case 12:
+      REG_PORT_OUTTGL0 = 0x00080000;
+      break;
+    case 13:
+      REG_PORT_OUTTGL0 = 0x00020000;
+      break;
+    case A0:
+      REG_PORT_OUTTGL0 = 0x00000004;
+      break;
+    case A1:
+      REG_PORT_OUTTGL1 = 0x00000100;
+      break;
+    case A2:
+      REG_PORT_OUTTGL1 = 0x00000200;
+      break;
+    case A3:
+      REG_PORT_OUTTGL0 = 0x00000010;
+      break;
+    case A4:
+      REG_PORT_OUTTGL0 = 0x00000020;
+      break;
+    case A5:
+      REG_PORT_OUTTGL1 = 0x00000004;
+      break;
+  }
+}
+
+void RapidFireIOclass::HSsetInputState(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      REG_PORT_DIRCLR0 = 0x00000800;
+      break;
+    case 1:
+      REG_PORT_DIRCLR0 = 0x00000400;
+      break;
+    case 2:
+      REG_PORT_DIRCLR0 = 0x00004000;
+      break;
+    case 3:
+      REG_PORT_DIRCLR0 = 0x00000200;
+      break;
+    case 4:
+      REG_PORT_DIRCLR0 = 0x00000100;
+      break;
+    case 5:
+      REG_PORT_DIRCLR0 = 0x00008000;
+      break;
+    case 6:
+      REG_PORT_DIRCLR0 = 0x00100000;
+      break;
+    case 7:
+      REG_PORT_DIRCLR0 = 0x00200000;
+      break;
+    case 8:
+      REG_PORT_DIRCLR0 = 0x00000040;
+      break;
+    case 9:
+      REG_PORT_DIRCLR0 = 0x00000080;
+      break;
+    case 10:
+      REG_PORT_DIRCLR0 = 0x00040000;
+      break;
+    case 11:
+      REG_PORT_DIRCLR0 = 0x00010000;
+      break;
+    case 12:
+      REG_PORT_DIRCLR0 = 0x00080000;
+      break;
+    case 13:
+      REG_PORT_DIRCLR0 = 0x00020000;
+      break;
+    case A0:
+      REG_PORT_DIRCLR0 = 0x00000004;
+      break;
+    case A1:
+      REG_PORT_DIRCLR1 = 0x00000100;
+      break;
+    case A2:
+      REG_PORT_DIRCLR1 = 0x00000200;
+      break;
+    case A3:
+      REG_PORT_DIRCLR0 = 0x00000010;
+      break;
+    case A4:
+      REG_PORT_DIRCLR0 = 0x00000020;
+      break;
+    case A5:
+      REG_PORT_DIRCLR1 = 0x00000004;
+      break;
+  }
+}
+
+void RapidFireIOclass::HSsetOutputState(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      REG_PORT_DIRSET0 = 0x00000800;
+      break;
+    case 1:
+      REG_PORT_DIRSET0 = 0x00000400;
+      break;
+    case 2:
+      REG_PORT_DIRSET0 = 0x00004000;
+      break;
+    case 3:
+      REG_PORT_DIRSET0 = 0x00000200;
+      break;
+    case 4:
+      REG_PORT_DIRSET0 = 0x00000100;
+      break;
+    case 5:
+      REG_PORT_DIRSET0 = 0x00008000;
+      break;
+    case 6:
+      REG_PORT_DIRSET0 = 0x00100000;
+      break;
+    case 7:
+      REG_PORT_DIRSET0 = 0x00200000;
+      break;
+    case 8:
+      REG_PORT_DIRSET0 = 0x00000040;
+      break;
+    case 9:
+      REG_PORT_DIRSET0 = 0x00000080;
+      break;
+    case 10:
+      REG_PORT_DIRSET0 = 0x00040000;
+      break;
+    case 11:
+      REG_PORT_DIRSET0 = 0x00010000;
+      break;
+    case 12:
+      REG_PORT_DIRSET0 = 0x00080000;
+      break;
+    case 13:
+      REG_PORT_DIRSET0 = 0x00020000;
+      break;
+    case A0:
+      REG_PORT_DIRSET0 = 0x00000004;
+      break;
+    case A1:
+      REG_PORT_DIRSET1 = 0x00000100;
+      break;
+    case A2:
+      REG_PORT_DIRSET1 = 0x00000200;
+      break;
+    case A3:
+      REG_PORT_DIRSET0 = 0x00000010;
+      break;
+    case A4:
+      REG_PORT_DIRSET0 = 0x00000020;
+      break;
+    case A5:
+      REG_PORT_DIRSET1 = 0x00000004;
+      break;
+  }
+}
+
+void RapidFireIOclass::HStoggleIOstate(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      REG_PORT_DIRTGL0 = 0x00000800;
+      break;
+    case 1:
+      REG_PORT_DIRTGL0 = 0x00000400;
+      break;
+    case 2:
+      REG_PORT_DIRTGL0 = 0x00004000;
+      break;
+    case 3:
+      REG_PORT_DIRTGL0 = 0x00000200;
+      break;
+    case 4:
+      REG_PORT_DIRTGL0 = 0x00000100;
+      break;
+    case 5:
+      REG_PORT_DIRTGL0 = 0x00008000;
+      break;
+    case 6:
+      REG_PORT_DIRTGL0 = 0x00100000;
+      break;
+    case 7:
+      REG_PORT_DIRTGL0 = 0x00200000;
+      break;
+    case 8:
+      REG_PORT_DIRTGL0 = 0x00000040;
+      break;
+    case 9:
+      REG_PORT_DIRTGL0 = 0x00000080;
+      break;
+    case 10:
+      REG_PORT_DIRTGL0 = 0x00040000;
+      break;
+    case 11:
+      REG_PORT_DIRTGL0 = 0x00010000;
+      break;
+    case 12:
+      REG_PORT_DIRTGL0 = 0x00080000;
+      break;
+    case 13:
+      REG_PORT_DIRTGL0 = 0x00020000;
+      break;
+    case A0:
+      REG_PORT_DIRTGL0 = 0x00000004;
+      break;
+    case A1:
+      REG_PORT_DIRTGL1 = 0x00000100;
+      break;
+    case A2:
+      REG_PORT_DIRTGL1 = 0x00000200;
+      break;
+    case A3:
+      REG_PORT_DIRTGL0 = 0x00000010;
+      break;
+    case A4:
+      REG_PORT_DIRTGL0 = 0x00000020;
+      break;
+    case A5:
+      REG_PORT_DIRTGL1 = 0x00000004;
+      break;
+  }
+}
+
+void RapidFireIOclass::HSpinMode(uint8_t pin, uint8_t state) {
+  if (state == INPUT || state == INPUT_PULLUP) {
+    HSsetInputState(pin);
+    if (state == INPUT_PULLUP) {
+      HSdigitalWrite(pin, HIGH);
+    }
+  }
+  else if (state == OUTPUT) {
+    HSsetOutputState(pin);
+  }
+}
+
+void RapidFireIOclass::HSdigitalWrite(uint8_t pin, uint8_t state) {
+  if (state == LOW) {
+    HSdigitalClear(pin);
+  }
+  else {
+    HSdigitalSet(pin);
+  }
+}
+
+uint32_t RapidFireIOclass::HSdigitalRead(uint8_t pin) {
+  uint32_t data = 0;
+  switch (pin) {
+    case 0:
+      data = REG_PORT_IN0; data &= 0x00000800;
+      break;
+    case 1:
+      data = REG_PORT_IN0; data &= 0x00000400;
+      break;
+    case 2:
+      data = REG_PORT_IN0; data &= 0x00004000;
+      break;
+    case 3:
+      data = REG_PORT_IN0; data &= 0x00000200;
+      break;
+    case 4:
+      data = REG_PORT_IN0; data &= 0x00000100;
+      break;
+    case 5:
+      data = REG_PORT_IN0; data &= 0x00008000;
+      break;
+    case 6:
+      data = REG_PORT_IN0; data &= 0x00100000;
+      break;
+    case 7:
+      data = REG_PORT_IN0; data &= 0x00200000;
+      break;
+    case 8:
+      data = REG_PORT_IN0; data &= 0x00000040;
+      break;
+    case 9:
+      data = REG_PORT_IN0; data &= 0x00000080;
+      break;
+    case 10:
+      data = REG_PORT_IN0; data &= 0x00040000;
+      break;
+    case 11:
+      data = REG_PORT_IN0; data &= 0x00010000;
+      break;
+    case 12:
+      data = REG_PORT_IN0; data &= 0x00020000;
+      break;
+    case 13:
+      data = REG_PORT_IN0; data &= 0x00000007;
+      break;
+    case A0:
+      data = REG_PORT_IN0; data &= 0x00000004;
+      break;
+    case A1:
+      data = REG_PORT_IN1; data &= 0x00000100;
+      break;
+    case A2:
+      data = REG_PORT_IN1; data &= 0x00000200;
+      break;
+    case A3:
+      data = REG_PORT_IN0; data &= 0x00000010;
+      break;
+    case A4:
+      data = REG_PORT_IN0; data &= 0x00000020;
+      break;
+    case A5:
+      data = REG_PORT_IN1; data &= 0x00000004;
+      break;
+  }
+  if (data == 0) {
+    return LOW;
+  }
+  else {
+    return HIGH;
+  }
 }
 
 void RapidFireIOclass::init() {
@@ -14647,6 +17629,1985 @@ uint32_t RapidFireIOclass::ReadPinPD10() {
   uint32_t data = REG_PIOD_PDSR; data &= 0x00000400; return data;
 }
 
+void RapidFireIOclass::HSdigitalSet(uint8_t pin) {
+  switch (pin) {
+    case 0: // PA8
+      REG_PIOA_SODR = 0x00000100;
+      break;
+    case 1: // PA9
+      REG_PIOA_SODR = 0x00000200;
+      break;
+    case 2: // PB25
+      REG_PIOB_SODR = 0x02000000;
+      break;
+    case 3: // PC28
+      REG_PIOC_SODR = 0x10000000;
+      break;
+    case 4: // PA29
+      REG_PIOA_SODR = 0x20000000;
+      break;
+    case 5: // PC25
+      REG_PIOC_SODR = 0x02000000;
+      break;
+    case 6: // PC24
+      REG_PIOC_SODR = 0x01000000;
+      break;
+    case 7: // PC23
+      REG_PIOC_SODR = 0x00800000;
+      break;
+    case 8: // PC22
+      REG_PIOC_SODR = 0x00400000;
+      break;
+    case 9: // PC21
+      REG_PIOC_SODR = 0x00200000;
+      break;
+    case 10: // PA28
+      REG_PIOA_SODR = 0x10000000;
+      break;
+    case 11: // PD7
+      REG_PIOD_SODR = 0x00000080;
+      break;
+    case 12: // PD8
+      REG_PIOD_SODR = 0x00000100;
+      break;
+    case 13: // PB27
+      REG_PIOB_SODR = 0x08000000;
+      break;
+    case 14: // PD4
+      REG_PIOD_SODR = 0x00000010;
+      break;
+    case 15: // PD5
+      REG_PIOD_SODR = 0x00000020;
+      break;
+    case 16: // PA13
+      REG_PIOA_SODR = 0x00002000;
+      break;
+    case 17: // PA12
+      REG_PIOA_SODR = 0x00001000;
+      break;
+    case 18: // PA11
+      REG_PIOA_SODR = 0x00000800;
+      break;
+    case 19: // PA10
+      REG_PIOA_SODR = 0x00000400;
+      break;
+    case 20: // PB12
+      REG_PIOB_SODR = 0x00001000;
+      break;
+    case 21: // PB13
+      REG_PIOB_SODR = 0x00002000;
+      break;
+    case 22: // PB26
+      REG_PIOB_SODR = 0x04000000;
+      break;
+    case 23: // PA14
+      REG_PIOA_SODR = 0x00004000;
+      break;
+    case 24: // PA15
+      REG_PIOA_SODR = 0x00008000;
+      break;
+    case 25: // PD0
+      REG_PIOD_SODR = 0x00000001;
+      break;
+    case 26: // PD1
+      REG_PIOD_SODR = 0x00000002;
+      break;
+    case 27: // PD2
+      REG_PIOD_SODR = 0x00000004;
+      break;
+    case 28: // PD3
+      REG_PIOD_SODR = 0x00000008;
+      break;
+    case 29: // PD6
+      REG_PIOD_SODR = 0x00000040;
+      break;
+    case 30: // PD9
+      REG_PIOD_SODR = 0x00000200;
+      break;
+    case 31: // PA7
+      REG_PIOA_SODR = 0x00000080;
+      break;
+    case 32: // PD10
+      REG_PIOD_SODR = 0x00000400;
+      break;
+    case 33: // PC1
+      REG_PIOC_SODR = 0x00000002;
+      break;
+    case 34: // PC2
+      REG_PIOC_SODR = 0x00000004;
+      break;
+    case 35: // PC3
+      REG_PIOC_SODR = 0x00000008;
+      break;
+    case 36: // PC4
+      REG_PIOC_SODR = 0x00000010;
+      break;
+    case 37: // PC5
+      REG_PIOC_SODR = 0x00000020;
+      break;
+    case 38: // PC6
+      REG_PIOC_SODR = 0x00000040;
+      break;
+    case 39: // PC7
+      REG_PIOC_SODR = 0x00000080;
+      break;
+    case 40: // PC8
+      REG_PIOC_SODR = 0x00000100;
+      break;
+    case 41: // PC9
+      REG_PIOC_SODR = 0x00000200;
+      break;
+    case 42: // PA19
+      REG_PIOA_SODR = 0x00080000;
+      break;
+    case 43: // PA20
+      REG_PIOA_SODR = 0x00100000;
+      break;
+    case 44: // PC19
+      REG_PIOC_SODR = 0x00080000;
+      break;
+    case 45: // PC18
+      REG_PIOC_SODR = 0x00040000;
+      break;
+    case 46: // PC17
+      REG_PIOC_SODR = 0x00020000;
+      break;
+    case 47: // PC16
+      REG_PIOC_SODR = 0x00010000;
+      break;
+    case 48: // PC15
+      REG_PIOC_SODR = 0x00008000;
+      break;
+    case 49: // PC14
+      REG_PIOC_SODR = 0x00004000;
+      break;
+    case 50: // PC13
+      REG_PIOC_SODR = 0x00002000;
+      break;
+    case 51: // PC12
+      REG_PIOC_SODR = 0x00001000;
+      break;
+    case 52: // PB21
+      REG_PIOB_SODR = 0x00200000;
+      break;
+    case 53: // PB14
+      REG_PIOB_SODR = 0x00004000;
+      break;
+    case A0: // PA16
+      REG_PIOA_SODR = 0x00010000;
+      break;
+    case A1: // PA24
+      REG_PIOA_SODR = 0x01000000;
+      break;
+    case A2: // PA23
+      REG_PIOA_SODR = 0x00800000;
+      break;
+    case A3: // PA22
+      REG_PIOA_SODR = 0x00400000;
+      break;
+    case A4: // PA6
+      REG_PIOA_SODR = 0x00000040;
+      break;
+    case A5: // PA4
+      REG_PIOA_SODR = 0x00000010;
+      break;
+    case A6: // PA3
+      REG_PIOA_SODR = 0x00000008;
+      break;
+    case A7: // PA2
+      REG_PIOA_SODR = 0x00000004;
+      break;
+    case A8: // PB17
+      REG_PIOB_SODR = 0x00020000;
+      break;
+    case A9: // PB18
+      REG_PIOB_SODR = 0x00040000;
+      break;
+    case A10: // PB19
+      REG_PIOB_SODR = 0x00080000;
+      break;
+    case A11: // PB20
+      REG_PIOB_SODR = 0x00100000;
+      break;
+  }
+}
+
+void RapidFireIOclass::HSdigitalClear(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      REG_PIOA_CODR = 0x00000100;
+      break;
+    case 1:
+      REG_PIOA_CODR = 0x00000200;
+      break;
+    case 2:
+      REG_PIOB_CODR = 0x02000000;
+      break;
+    case 3:
+      REG_PIOC_CODR = 0x10000000;
+      break;
+    case 4:
+      REG_PIOA_CODR = 0x20000000;
+      break;
+    case 5:
+      REG_PIOC_CODR = 0x02000000;
+      break;
+    case 6:
+      REG_PIOC_CODR = 0x01000000;
+      break;
+    case 7:
+      REG_PIOC_CODR = 0x00800000;
+      break;
+    case 8:
+      REG_PIOC_CODR = 0x00400000;
+      break;
+    case 9:
+      REG_PIOC_CODR = 0x00200000;
+      break;
+    case 10:
+      REG_PIOA_CODR = 0x10000000;
+      break;
+    case 11:
+      REG_PIOD_CODR = 0x00000080;
+      break;
+    case 12:
+      REG_PIOD_CODR = 0x00000100;
+      break;
+    case 13:
+      REG_PIOB_CODR = 0x08000000;
+      break;
+    case 14:
+      REG_PIOD_CODR = 0x00000010;
+      break;
+    case 15:
+      REG_PIOD_CODR = 0x00000020;
+      break;
+    case 16:
+      REG_PIOA_CODR = 0x00002000;
+      break;
+    case 17:
+      REG_PIOA_CODR = 0x00001000;
+      break;
+    case 18:
+      REG_PIOA_CODR = 0x00000800;
+      break;
+    case 19:
+      REG_PIOA_CODR = 0x00000400;
+      break;
+    case 20:
+      REG_PIOB_CODR = 0x00001000;
+      break;
+    case 21:
+      REG_PIOB_CODR = 0x00002000;
+      break;
+    case 22:
+      REG_PIOB_CODR = 0x04000000;
+      break;
+    case 23:
+      REG_PIOA_CODR = 0x00004000;
+      break;
+    case 24:
+      REG_PIOA_CODR = 0x00008000;
+      break;
+    case 25:
+      REG_PIOD_CODR = 0x00000001;
+      break;
+    case 26:
+      REG_PIOD_CODR = 0x00000002;
+      break;
+    case 27:
+      REG_PIOD_CODR = 0x00000004;
+      break;
+    case 28:
+      REG_PIOD_CODR = 0x00000008;
+      break;
+    case 29:
+      REG_PIOD_CODR = 0x00000040;
+      break;
+    case 30:
+      REG_PIOD_CODR = 0x00000200;
+      break;
+    case 31:
+      REG_PIOA_CODR = 0x00000080;
+      break;
+    case 32:
+      REG_PIOD_CODR = 0x00000400;
+      break;
+    case 33:
+      REG_PIOC_CODR = 0x00000002;
+      break;
+    case 34:
+      REG_PIOC_CODR = 0x00000004;
+      break;
+    case 35:
+      REG_PIOC_CODR = 0x00000008;
+      break;
+    case 36:
+      REG_PIOC_CODR = 0x00000010;
+      break;
+    case 37:
+      REG_PIOC_CODR = 0x00000020;
+      break;
+    case 38:
+      REG_PIOC_CODR = 0x00000040;
+      break;
+    case 39:
+      REG_PIOC_CODR = 0x00000080;
+      break;
+    case 40:
+      REG_PIOC_CODR = 0x00000100;
+      break;
+    case 41:
+      REG_PIOC_CODR = 0x00000200;
+      break;
+    case 42:
+      REG_PIOA_CODR = 0x00080000;
+      break;
+    case 43:
+      REG_PIOA_CODR = 0x00100000;
+      break;
+    case 44:
+      REG_PIOC_CODR = 0x00080000;
+      break;
+    case 45:
+      REG_PIOC_CODR = 0x00040000;
+      break;
+    case 46:
+      REG_PIOC_CODR = 0x00020000;
+      break;
+    case 47:
+      REG_PIOC_CODR = 0x00010000;
+      break;
+    case 48:
+      REG_PIOC_CODR = 0x00008000;
+      break;
+    case 49:
+      REG_PIOC_CODR = 0x00004000;
+      break;
+    case 50:
+      REG_PIOC_CODR = 0x00002000;
+      break;
+    case 51:
+      REG_PIOC_CODR = 0x00001000;
+      break;
+    case 52:
+      REG_PIOB_CODR = 0x00200000;
+      break;
+    case 53:
+      REG_PIOB_CODR = 0x00004000;
+      break;
+    case A0:
+      REG_PIOA_CODR = 0x00010000;
+      break;
+    case A1:
+      REG_PIOA_CODR = 0x01000000;
+      break;
+    case A2:
+      REG_PIOA_CODR = 0x00800000;
+      break;
+    case A3:
+      REG_PIOA_CODR = 0x00400000;
+      break;
+    case A4:
+      REG_PIOA_CODR = 0x00000040;
+      break;
+    case A5:
+      REG_PIOA_CODR = 0x00000010;
+      break;
+    case A6:
+      REG_PIOA_CODR = 0x00000008;
+      break;
+    case A7:
+      REG_PIOA_CODR = 0x00000004;
+      break;
+    case A8:
+      REG_PIOB_CODR = 0x00020000;
+      break;
+    case A9:
+      REG_PIOB_CODR = 0x00040000;
+      break;
+    case A10:
+      REG_PIOB_CODR = 0x00080000;
+      break;
+    case A11:
+      REG_PIOB_CODR = 0x00100000;
+      break;
+  }
+}
+
+void RapidFireIOclass::HSdigitalToggle(uint8_t pin) {
+  uint32_t data;
+  switch (pin) {
+    case 0:
+      data = REG_PIOA_PDSR; data &= 0x00000100; if (data != 0) {
+        REG_PIOA_CODR = 0x00000100;
+      } else {
+        REG_PIOA_SODR = 0x00000100;
+      }
+      break;
+    case 1:
+      data = REG_PIOA_PDSR; data &= 0x00000200; if (data != 0) {
+        REG_PIOA_CODR = 0x00000200;
+      } else {
+        REG_PIOA_SODR = 0x00000200;
+      }
+      break;
+    case 2:
+      data = REG_PIOB_PDSR; data &= 0x02000000; if (data != 0) {
+        REG_PIOB_CODR = 0x02000000;
+      } else {
+        REG_PIOB_SODR = 0x02000000;
+      }
+      break;
+    case 3:
+      data = REG_PIOC_PDSR; data &= 0x10000000; if (data != 0) {
+        REG_PIOC_CODR = 0x10000000;
+      } else {
+        REG_PIOC_SODR = 0x10000000;
+      }
+      break;
+    case 4:
+      data = REG_PIOA_PDSR; data &= 0x20000000; if (data != 0) {
+        REG_PIOA_CODR = 0x20000000;
+      } else {
+        REG_PIOA_SODR = 0x20000000;
+      }
+      break;
+    case 5:
+      data = REG_PIOC_PDSR; data &= 0x02000000; if (data != 0) {
+        REG_PIOC_CODR = 0x02000000;
+      } else {
+        REG_PIOC_SODR = 0x02000000;
+      }
+      break;
+    case 6:
+      data = REG_PIOC_PDSR; data &= 0x01000000; if (data != 0) {
+        REG_PIOC_CODR = 0x01000000;
+      } else {
+        REG_PIOC_SODR = 0x01000000;
+      }
+      break;
+    case 7:
+      data = REG_PIOC_PDSR; data &= 0x00800000; if (data != 0) {
+        REG_PIOC_CODR = 0x00800000;
+      } else {
+        REG_PIOC_SODR = 0x00800000;
+      }
+      break;
+    case 8:
+      data = REG_PIOC_PDSR; data &= 0x00400000; if (data != 0) {
+        REG_PIOC_CODR = 0x00400000;
+      } else {
+        REG_PIOC_SODR = 0x00400000;
+      }
+      break;
+    case 9:
+      data = REG_PIOC_PDSR; data &= 0x00200000; if (data != 0) {
+        REG_PIOC_CODR = 0x00200000;
+      } else {
+        REG_PIOC_SODR = 0x00200000;
+      }
+      break;
+    case 10:
+      data = REG_PIOA_PDSR; data &= 0x10000000; if (data != 0) {
+        REG_PIOA_CODR = 0x10000000;
+      } else {
+        REG_PIOA_SODR = 0x10000000;
+      }
+      break;
+    case 11:
+      data = REG_PIOD_PDSR; data &= 0x00000080; if (data != 0) {
+        REG_PIOD_CODR = 0x00000080;
+      } else {
+        REG_PIOD_SODR = 0x00000080;
+      }
+      break;
+    case 12:
+      data = REG_PIOD_PDSR; data &= 0x00000100; if (data != 0) {
+        REG_PIOD_CODR = 0x00000100;
+      } else {
+        REG_PIOD_SODR = 0x00000100;
+      }
+      break;
+    case 13:
+      data = REG_PIOB_PDSR; data &= 0x08000000; if (data != 0) {
+        REG_PIOB_CODR = 0x08000000;
+      } else {
+        REG_PIOB_SODR = 0x08000000;
+      }
+      break;
+    case 14:
+      data = REG_PIOD_PDSR; data &= 0x00000010; if (data != 0) {
+        REG_PIOD_CODR = 0x00000010;
+      } else {
+        REG_PIOD_SODR = 0x00000010;
+      }
+      break;
+    case 15:
+      data = REG_PIOD_PDSR; data &= 0x00000020; if (data != 0) {
+        REG_PIOD_CODR = 0x00000020;
+      } else {
+        REG_PIOD_SODR = 0x00000020;
+      }
+      break;
+    case 16:
+      data = REG_PIOA_PDSR; data &= 0x00002000; if (data != 0) {
+        REG_PIOA_CODR = 0x00000000;
+      } else {
+        REG_PIOA_SODR = 0x00000000;
+      }
+      break;
+    case 17:
+      data = REG_PIOA_PDSR; data &= 0x00001000; if (data != 0) {
+        REG_PIOA_CODR = 0x00001000;
+      } else {
+        REG_PIOA_SODR = 0x00001000;
+      }
+      break;
+    case 18:
+      data = REG_PIOA_PDSR; data &= 0x00000800; if (data != 0) {
+        REG_PIOA_CODR = 0x00000800;
+      } else {
+        REG_PIOA_SODR = 0x00000800;
+      }
+      break;
+    case 19:
+      data = REG_PIOA_PDSR; data &= 0x00000400; if (data != 0) {
+        REG_PIOA_CODR = 0x00000400;
+      } else {
+        REG_PIOA_SODR = 0x00000400;
+      }
+      break;
+    case 20:
+      data = REG_PIOB_PDSR; data &= 0x00001000; if (data != 0) {
+        REG_PIOB_CODR = 0x00001000;
+      } else {
+        REG_PIOB_SODR = 0x00001000;
+      }
+      break;
+    case 21:
+      data = REG_PIOB_PDSR; data &= 0x00002000; if (data != 0) {
+        REG_PIOB_CODR = 0x00002000;
+      } else {
+        REG_PIOB_SODR = 0x00002000;
+      }
+      break;
+    case 22:
+      data = REG_PIOB_PDSR; data &= 0x04000000; if (data != 0) {
+        REG_PIOB_CODR = 0x04000000;
+      } else {
+        REG_PIOB_SODR = 0x04000000;
+      }
+      break;
+    case 23:
+      data = REG_PIOA_PDSR; data &= 0x00004000; if (data != 0) {
+        REG_PIOA_CODR = 0x00004000;
+      } else {
+        REG_PIOA_SODR = 0x00004000;
+      }
+      break;
+    case 24:
+      data = REG_PIOA_PDSR; data &= 0x00008000; if (data != 0) {
+        REG_PIOA_CODR = 0x00008000;
+      } else {
+        REG_PIOA_SODR = 0x00008000;
+      }
+      break;
+    case 25:
+      data = REG_PIOD_PDSR; data &= 0x00000001; if (data != 0) {
+        REG_PIOD_CODR = 0x00000001;
+      } else {
+        REG_PIOD_SODR = 0x00000001;
+      }
+      break;
+    case 26:
+      data = REG_PIOD_PDSR; data &= 0x00000002; if (data != 0) {
+        REG_PIOD_CODR = 0x00000002;
+      } else {
+        REG_PIOD_SODR = 0x00000002;
+      }
+      break;
+    case 27:
+      data = REG_PIOD_PDSR; data &= 0x00000004; if (data != 0) {
+        REG_PIOD_CODR = 0x00000004;
+      } else {
+        REG_PIOD_SODR = 0x00000004;
+      }
+      break;
+    case 28:
+      data = REG_PIOD_PDSR; data &= 0x00000008; if (data != 0) {
+        REG_PIOD_CODR = 0x00000008;
+      } else {
+        REG_PIOD_SODR = 0x00000008;
+      }
+      break;
+    case 29:
+      data = REG_PIOD_PDSR; data &= 0x00000040; if (data != 0) {
+        REG_PIOD_CODR = 0x00000040;
+      } else {
+        REG_PIOD_SODR = 0x00000040;
+      }
+      break;
+    case 30:
+      data = REG_PIOD_PDSR; data &= 0x00000200; if (data != 0) {
+        REG_PIOD_CODR = 0x00000200;
+      } else {
+        REG_PIOD_SODR = 0x00000200;
+      }
+      break;
+    case 31:
+      data = REG_PIOA_PDSR; data &= 0x00000080; if (data != 0) {
+        REG_PIOA_CODR = 0x00000080;
+      } else {
+        REG_PIOA_SODR = 0x00000080;
+      }
+      break;
+    case 32:
+      data = REG_PIOD_PDSR; data &= 0x00000400; if (data != 0) {
+        REG_PIOD_CODR = 0x00000400;
+      } else {
+        REG_PIOD_SODR = 0x00000400;
+      }
+      break;
+    case 33:
+      data = REG_PIOC_PDSR; data &= 0x00000002; if (data != 0) {
+        REG_PIOC_CODR = 0x00000002;
+      } else {
+        REG_PIOC_SODR = 0x00000002;
+      }
+      break;
+    case 34:
+      data = REG_PIOC_PDSR; data &= 0x00000004; if (data != 0) {
+        REG_PIOC_CODR = 0x00000004;
+      } else {
+        REG_PIOC_SODR = 0x00000004;
+      }
+      break;
+    case 35:
+      data = REG_PIOC_PDSR; data &= 0x00000008; if (data != 0) {
+        REG_PIOC_CODR = 0x00000008;
+      } else {
+        REG_PIOC_SODR = 0x00000008;
+      }
+      break;
+    case 36:
+      data = REG_PIOC_PDSR; data &= 0x00000010; if (data != 0) {
+        REG_PIOC_CODR = 0x00000010;
+      } else {
+        REG_PIOC_SODR = 0x00000010;
+      }
+      break;
+    case 37:
+      data = REG_PIOC_PDSR; data &= 0x00000020; if (data != 0) {
+        REG_PIOC_CODR = 0x00000020;
+      } else {
+        REG_PIOC_SODR = 0x00000020;
+      }
+      break;
+    case 38:
+      data = REG_PIOC_PDSR; data &= 0x00000040; if (data != 0) {
+        REG_PIOC_CODR = 0x00000040;
+      } else {
+        REG_PIOC_SODR = 0x00000040;
+      }
+      break;
+    case 39:
+      data = REG_PIOC_PDSR; data &= 0x00000080; if (data != 0) {
+        REG_PIOC_CODR = 0x00000080;
+      } else {
+        REG_PIOC_SODR = 0x00000080;
+      }
+      break;
+    case 40:
+      data = REG_PIOC_PDSR; data &= 0x00000100; if (data != 0) {
+        REG_PIOC_CODR = 0x00000100;
+      } else {
+        REG_PIOC_SODR = 0x00000100;
+      }
+      break;
+    case 41:
+      data = REG_PIOC_PDSR; data &= 0x00000200; if (data != 0) {
+        REG_PIOC_CODR = 0x00000200;
+      } else {
+        REG_PIOC_SODR = 0x00000200;
+      }
+      break;
+    case 42:
+      data = REG_PIOA_PDSR; data &= 0x00080000; if (data != 0) {
+        REG_PIOA_CODR = 0x00080000;
+      } else {
+        REG_PIOA_SODR = 0x00080000;
+      }
+      break;
+    case 43:
+      data = REG_PIOA_PDSR; data &= 0x00100000; if (data != 0) {
+        REG_PIOA_CODR = 0x00100000;
+      } else {
+        REG_PIOA_SODR = 0x00100000;
+      }
+      break;
+    case 44:
+      data = REG_PIOC_PDSR; data &= 0x00080000; if (data != 0) {
+        REG_PIOC_CODR = 0x00080000;
+      } else {
+        REG_PIOC_SODR = 0x00080000;
+      }
+      break;
+    case 45:
+      data = REG_PIOC_PDSR; data &= 0x00040000; if (data != 0) {
+        REG_PIOC_CODR = 0x00040000;
+      } else {
+        REG_PIOC_SODR = 0x00040000;
+      }
+      break;
+    case 46:
+      data = REG_PIOC_PDSR; data &= 0x00020000; if (data != 0) {
+        REG_PIOC_CODR = 0x00020000;
+      } else {
+        REG_PIOC_SODR = 0x00020000;
+      }
+      break;
+    case 47:
+      data = REG_PIOC_PDSR; data &= 0x00010000; if (data != 0) {
+        REG_PIOC_CODR = 0x00010000;
+      } else {
+        REG_PIOC_SODR = 0x00010000;
+      }
+      break;
+    case 48:
+      data = REG_PIOC_PDSR; data &= 0x00008000; if (data != 0) {
+        REG_PIOC_CODR = 0x00008000;
+      } else {
+        REG_PIOC_SODR = 0x00008000;
+      }
+      break;
+    case 49:
+      data = REG_PIOC_PDSR; data &= 0x00004000; if (data != 0) {
+        REG_PIOC_CODR = 0x00004000;
+      } else {
+        REG_PIOC_SODR = 0x00004000;
+      }
+      break;
+    case 50:
+      data = REG_PIOC_PDSR; data &= 0x00002000; if (data != 0) {
+        REG_PIOC_CODR = 0x00002000;
+      } else {
+        REG_PIOC_SODR = 0x00002000;
+      }
+      break;
+    case 51:
+      data = REG_PIOC_PDSR; data &= 0x00001000; if (data != 0) {
+        REG_PIOC_CODR = 0x00001000;
+      } else {
+        REG_PIOC_SODR = 0x00001000;
+      }
+      break;
+    case 52:
+      data = REG_PIOB_PDSR; data &= 0x00200000; if (data != 0) {
+        REG_PIOB_CODR = 0x00200000;
+      } else {
+        REG_PIOB_SODR = 0x00200000;
+      }
+      break;
+    case 53:
+      data = REG_PIOB_PDSR; data &= 0x00004000; if (data != 0) {
+        REG_PIOB_CODR = 0x00004000;
+      } else {
+        REG_PIOB_SODR = 0x00004000;
+      }
+      break;
+    case A0:
+      data = REG_PIOA_PDSR; data &= 0x00010000; if (data != 0) {
+        REG_PIOA_CODR = 0x00010000;
+      } else {
+        REG_PIOA_SODR = 0x00010000;
+      }
+      break;
+    case A1:
+      data = REG_PIOA_PDSR; data &= 0x01000000; if (data != 0) {
+        REG_PIOA_CODR = 0x01000000;
+      } else {
+        REG_PIOA_SODR = 0x01000000;
+      }
+      break;
+    case A2:
+      data = REG_PIOA_PDSR; data &= 0x00800000; if (data != 0) {
+        REG_PIOA_CODR = 0x00800000;
+      } else {
+        REG_PIOA_SODR = 0x00800000;
+      }
+      break;
+    case A3:
+      data = REG_PIOA_PDSR; data &= 0x00400000; if (data != 0) {
+        REG_PIOA_CODR = 0x00400000;
+      } else {
+        REG_PIOA_SODR = 0x00400000;
+      }
+      break;
+    case A4:
+      data = REG_PIOA_PDSR; data &= 0x00000040; if (data != 0) {
+        REG_PIOA_CODR = 0x00000040;
+      } else {
+        REG_PIOA_SODR = 0x00000040;
+      }
+      break;
+    case A5:
+      data = REG_PIOA_PDSR; data &= 0x00000010; if (data != 0) {
+        REG_PIOA_CODR = 0x00000010;
+      } else {
+        REG_PIOA_SODR = 0x00000010;
+      }
+      break;
+    case A6:
+      data = REG_PIOA_PDSR; data &= 0x00000008; if (data != 0) {
+        REG_PIOA_CODR = 0x00000008;
+      } else {
+        REG_PIOA_SODR = 0x00000008;
+      }
+      break;
+    case A7:
+      data = REG_PIOA_PDSR; data &= 0x00000004; if (data != 0) {
+        REG_PIOA_CODR = 0x00000004;
+      } else {
+        REG_PIOA_SODR = 0x00000004;
+      }
+      break;
+    case A8:
+      data = REG_PIOB_PDSR; data &= 0x00020000; if (data != 0) {
+        REG_PIOB_CODR = 0x00020000;
+      } else {
+        REG_PIOB_SODR = 0x00020000;
+      }
+      break;
+    case A9:
+      data = REG_PIOB_PDSR; data &= 0x00040000; if (data != 0) {
+        REG_PIOB_CODR = 0x00040000;
+      } else {
+        REG_PIOB_SODR = 0x00040000;
+      }
+      break;
+    case A10:
+      data = REG_PIOB_PDSR; data &= 0x00080000; if (data != 0) {
+        REG_PIOB_CODR = 0x00080000;
+      } else {
+        REG_PIOB_SODR = 0x00080000;
+      }
+      break;
+    case A11:
+      data = REG_PIOB_PDSR; data &= 0x00100000; if (data != 0) {
+        REG_PIOB_CODR = 0x00100000;
+      } else {
+        REG_PIOB_SODR = 0x00100000;
+      }
+      break;
+  }
+}
+
+void RapidFireIOclass::HSsetInputState(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      REG_PIOA_ODR = 0x00000100; REG_PIOA_PDR = 0x00000100;
+      break;
+    case 1:
+      REG_PIOA_ODR = 0x00000200; REG_PIOA_PDR = 0x00000200;
+      break;
+    case 2:
+      REG_PIOB_ODR = 0x02000000; REG_PIOB_PDR = 0x02000000;
+      break;
+    case 3:
+      REG_PIOC_ODR = 0x10000000; REG_PIOC_PDR = 0x10000000;
+      break;
+    case 4:
+      REG_PIOA_ODR = 0x20000000; REG_PIOA_PDR = 0x20000000;
+      break;
+    case 5:
+      REG_PIOC_ODR = 0x02000000; REG_PIOC_PDR = 0x02000000;
+      break;
+    case 6:
+      REG_PIOC_ODR = 0x01000000; REG_PIOC_PDR = 0x01000000;
+      break;
+    case 7:
+      REG_PIOC_ODR = 0x00800000; REG_PIOC_PDR = 0x00800000;
+      break;
+    case 8:
+      REG_PIOC_ODR = 0x00400000; REG_PIOC_PDR = 0x00400000;
+      break;
+    case 9:
+      REG_PIOC_ODR = 0x00200000; REG_PIOC_PDR = 0x00200000;
+      break;
+    case 10:
+      REG_PIOA_ODR = 0x10000000; REG_PIOA_PDR = 0x10000000;
+      break;
+    case 11:
+      REG_PIOD_ODR = 0x00000080; REG_PIOD_PDR = 0x00000080;
+      break;
+    case 12:
+      REG_PIOD_ODR = 0x00000100; REG_PIOD_PDR = 0x00000100;
+      break;
+    case 13:
+      REG_PIOB_ODR = 0x08000000; REG_PIOB_PDR = 0x08000000;
+      break;
+    case 14:
+      REG_PIOD_ODR = 0x00000010; REG_PIOD_PDR = 0x00000010;
+      break;
+    case 15:
+      REG_PIOD_ODR = 0x00000020; REG_PIOD_PDR = 0x00000020;
+      break;
+    case 16:
+      REG_PIOA_ODR = 0x00002000; REG_PIOA_PDR = 0x00002000;
+      break;
+    case 17:
+      REG_PIOA_ODR = 0x00001000; REG_PIOA_PDR = 0x00001000;
+      break;
+    case 18:
+      REG_PIOA_ODR = 0x00000800; REG_PIOA_PDR = 0x00000800;
+      break;
+    case 19:
+      REG_PIOA_ODR = 0x00000400; REG_PIOA_PDR = 0x00000400;
+      break;
+    case 20:
+      REG_PIOB_ODR = 0x00001000; REG_PIOB_PDR = 0x00001000;
+      break;
+    case 21:
+      REG_PIOB_ODR = 0x00002000; REG_PIOB_PDR = 0x00002000;
+      break;
+    case 22:
+      REG_PIOB_ODR = 0x04000000; REG_PIOB_PDR = 0x04000000;
+      break;
+    case 23:
+      REG_PIOA_ODR = 0x00004000; REG_PIOA_PDR = 0x00004000;
+      break;
+    case 24:
+      REG_PIOA_ODR = 0x00008000; REG_PIOA_PDR = 0x00008000;
+      break;
+    case 25:
+      REG_PIOD_ODR = 0x00000001; REG_PIOD_PDR = 0x00000001;
+      break;
+    case 26:
+      REG_PIOD_ODR = 0x00000002; REG_PIOD_PDR = 0x00000002;
+      break;
+    case 27:
+      REG_PIOD_ODR = 0x00000004; REG_PIOD_PDR = 0x00000004;
+      break;
+    case 28:
+      REG_PIOD_ODR = 0x00000008; REG_PIOD_PDR = 0x00000008;
+      break;
+    case 29:
+      REG_PIOD_ODR = 0x00000040; REG_PIOD_PDR = 0x00000040;
+      break;
+    case 30:
+      REG_PIOD_ODR = 0x00000200; REG_PIOD_PDR = 0x00000200;
+      break;
+    case 31:
+      REG_PIOA_ODR = 0x00000080; REG_PIOA_PDR = 0x00000080;
+      break;
+    case 32:
+      REG_PIOD_ODR = 0x00000400; REG_PIOD_PDR = 0x00000400;
+      break;
+    case 33:
+      REG_PIOC_ODR = 0x00000002; REG_PIOC_PDR = 0x00000002;
+      break;
+    case 34:
+      REG_PIOC_ODR = 0x00000004; REG_PIOC_PDR = 0x00000004;
+      break;
+    case 35:
+      REG_PIOC_ODR = 0x00000008; REG_PIOC_PDR = 0x00000008;
+      break;
+    case 36:
+      REG_PIOC_ODR = 0x00000010; REG_PIOC_PDR = 0x00000010;
+      break;
+    case 37:
+      REG_PIOC_ODR = 0x00000020; REG_PIOC_PDR = 0x00000020;
+      break;
+    case 38:
+      REG_PIOC_ODR = 0x00000040; REG_PIOC_PDR = 0x00000040;
+      break;
+    case 39:
+      REG_PIOC_ODR = 0x00000080; REG_PIOC_PDR = 0x00000080;
+      break;
+    case 40:
+      REG_PIOC_ODR = 0x00000100; REG_PIOC_PDR = 0x00000100;
+      break;
+    case 41:
+      REG_PIOC_ODR = 0x00000200; REG_PIOC_PDR = 0x00000200;
+      break;
+    case 42:
+      REG_PIOA_ODR = 0x00080000; REG_PIOA_PDR = 0x00080000;
+      break;
+    case 43:
+      REG_PIOA_ODR = 0x00100000; REG_PIOA_PDR = 0x00100000;
+      break;
+    case 44:
+      REG_PIOC_ODR = 0x00080000; REG_PIOC_PDR = 0x00080000;
+      break;
+    case 45:
+      REG_PIOC_ODR = 0x00040000; REG_PIOC_PDR = 0x00040000;
+      break;
+    case 46:
+      REG_PIOC_ODR = 0x00020000; REG_PIOC_PDR = 0x00020000;
+      break;
+    case 47:
+      REG_PIOC_ODR = 0x00010000; REG_PIOC_PDR = 0x00010000;
+      break;
+    case 48:
+      REG_PIOC_ODR = 0x00008000; REG_PIOC_PDR = 0x00008000;
+      break;
+    case 49:
+      REG_PIOC_ODR = 0x00004000; REG_PIOC_PDR = 0x00004000;
+      break;
+    case 50:
+      REG_PIOC_ODR = 0x00002000; REG_PIOC_PDR = 0x00002000;
+      break;
+    case 51:
+      REG_PIOC_ODR = 0x00001000; REG_PIOC_PDR = 0x00001000;
+      break;
+    case 52:
+      REG_PIOB_ODR = 0x00200000; REG_PIOB_PDR = 0x00200000;
+      break;
+    case 53:
+      REG_PIOB_ODR = 0x00004000; REG_PIOB_PDR = 0x00004000;
+      break;
+    case A0:
+      REG_PIOA_ODR = 0x00010000; REG_PIOA_PDR = 0x00010000;
+      break;
+    case A1:
+      REG_PIOA_ODR = 0x01000000; REG_PIOA_PDR = 0x01000000;
+      break;
+    case A2:
+      REG_PIOA_ODR = 0x00800000; REG_PIOA_PDR = 0x00800000;
+      break;
+    case A3:
+      REG_PIOA_ODR = 0x00400000; REG_PIOA_PDR = 0x00400000;
+      break;
+    case A4:
+      REG_PIOA_ODR = 0x00000040; REG_PIOA_PDR = 0x00000040;
+      break;
+    case A5:
+      REG_PIOA_ODR = 0x00000010; REG_PIOA_PDR = 0x00000010;
+      break;
+    case A6:
+      REG_PIOA_ODR = 0x00000008; REG_PIOA_PDR = 0x00000008;
+      break;
+    case A7:
+      REG_PIOA_ODR = 0x00000004; REG_PIOA_PDR = 0x00000004;
+      break;
+    case A8:
+      REG_PIOB_ODR = 0x00020000; REG_PIOB_PDR = 0x00020000;
+      break;
+    case A9:
+      REG_PIOB_ODR = 0x00040000; REG_PIOB_PDR = 0x00040000;
+      break;
+    case A10:
+      REG_PIOB_ODR = 0x00080000; REG_PIOB_PDR = 0x00080000;
+      break;
+    case A11:
+      REG_PIOB_ODR = 0x00100000; REG_PIOB_PDR = 0x00100000;
+      break;
+  }
+}
+
+void RapidFireIOclass::HSsetOutputState(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      REG_PIOA_OER = 0x00000100; REG_PIOA_PER = 0x00000100;
+      break;
+    case 1:
+      REG_PIOA_OER = 0x00000200; REG_PIOA_PER = 0x00000200;
+      break;
+    case 2:
+      REG_PIOB_OER = 0x02000000; REG_PIOB_PER = 0x02000000;
+      break;
+    case 3:
+      REG_PIOC_OER = 0x10000000; REG_PIOC_PER = 0x10000000;
+      break;
+    case 4:
+      REG_PIOA_OER = 0x20000000; REG_PIOA_PER = 0x20000000;
+      break;
+    case 5:
+      REG_PIOC_OER = 0x02000000; REG_PIOC_PER = 0x02000000;
+      break;
+    case 6:
+      REG_PIOC_OER = 0x01000000; REG_PIOC_PER = 0x01000000;
+      break;
+    case 7:
+      REG_PIOC_OER = 0x00800000; REG_PIOC_PER = 0x00800000;
+      break;
+    case 8:
+      REG_PIOC_OER = 0x00400000; REG_PIOC_PER = 0x00400000;
+      break;
+    case 9:
+      REG_PIOC_OER = 0x00200000; REG_PIOC_PER = 0x00200000;
+      break;
+    case 10:
+      REG_PIOA_OER = 0x10000000; REG_PIOA_PER = 0x10000000;
+      break;
+    case 11:
+      REG_PIOD_OER = 0x00000080; REG_PIOD_PER = 0x00000080;
+      break;
+    case 12:
+      REG_PIOD_OER = 0x00000100; REG_PIOD_PER = 0x00000100;
+      break;
+    case 13:
+      REG_PIOB_OER = 0x08000000; REG_PIOB_PER = 0x08000000;
+      break;
+    case 14:
+      REG_PIOD_OER = 0x00000010; REG_PIOD_PER = 0x00000010;
+      break;
+    case 15:
+      REG_PIOD_OER = 0x00000020; REG_PIOD_PER = 0x00000020;
+      break;
+    case 16:
+      REG_PIOA_OER = 0x00002000; REG_PIOA_PER = 0x00002000;
+      break;
+    case 17:
+      REG_PIOA_OER = 0x00001000; REG_PIOA_PER = 0x00001000;
+      break;
+    case 18:
+      REG_PIOA_OER = 0x00000800; REG_PIOA_PER = 0x00000800;
+      break;
+    case 19:
+      REG_PIOA_OER = 0x00000400; REG_PIOA_PER = 0x00000400;
+      break;
+    case 20:
+      REG_PIOB_OER = 0x00001000; REG_PIOB_PER = 0x00001000;
+      break;
+    case 21:
+      REG_PIOB_OER = 0x00002000; REG_PIOB_PER = 0x00002000;
+      break;
+    case 22:
+      REG_PIOB_OER = 0x04000000; REG_PIOB_PER = 0x04000000;
+      break;
+    case 23:
+      REG_PIOA_OER = 0x00004000; REG_PIOA_PER = 0x00004000;
+      break;
+    case 24:
+      REG_PIOA_OER = 0x00008000; REG_PIOA_PER = 0x00008000;
+      break;
+    case 25:
+      REG_PIOD_OER = 0x00000001; REG_PIOD_PER = 0x00000001;
+      break;
+    case 26:
+      REG_PIOD_OER = 0x00000002; REG_PIOD_PER = 0x00000002;
+      break;
+    case 27:
+      REG_PIOD_OER = 0x00000004; REG_PIOD_PER = 0x00000004;
+      break;
+    case 28:
+      REG_PIOD_OER = 0x00000008; REG_PIOD_PER = 0x00000008;
+      break;
+    case 29:
+      REG_PIOD_OER = 0x00000040; REG_PIOD_PER = 0x00000040;
+      break;
+    case 30:
+      REG_PIOD_OER = 0x00000200; REG_PIOD_PER = 0x00000200;
+      break;
+    case 31:
+      REG_PIOA_OER = 0x00000080; REG_PIOA_PER = 0x00000080;
+      break;
+    case 32:
+      REG_PIOD_OER = 0x00000400; REG_PIOD_PER = 0x00000400;
+      break;
+    case 33:
+      REG_PIOC_OER = 0x00000002; REG_PIOC_PER = 0x00000002;
+      break;
+    case 34:
+      REG_PIOC_OER = 0x00000004; REG_PIOC_PER = 0x00000004;
+      break;
+    case 35:
+      REG_PIOC_OER = 0x00000008; REG_PIOC_PER = 0x00000008;
+      break;
+    case 36:
+      REG_PIOC_OER = 0x00000010; REG_PIOC_PER = 0x00000010;
+      break;
+    case 37:
+      REG_PIOC_OER = 0x00000020; REG_PIOC_PER = 0x00000020;
+      break;
+    case 38:
+      REG_PIOC_OER = 0x00000040; REG_PIOC_PER = 0x00000040;
+      break;
+    case 39:
+      REG_PIOC_OER = 0x00000080; REG_PIOC_PER = 0x00000080;
+      break;
+    case 40:
+      REG_PIOC_OER = 0x00000100; REG_PIOC_PER = 0x00000100;
+      break;
+    case 41:
+      REG_PIOC_OER = 0x00000200; REG_PIOC_PER = 0x00000200;
+      break;
+    case 42:
+      REG_PIOA_OER = 0x00080000; REG_PIOA_PER = 0x00080000;
+      break;
+    case 43:
+      REG_PIOA_OER = 0x00100000; REG_PIOA_PER = 0x00100000;
+      break;
+    case 44:
+      REG_PIOC_OER = 0x00080000; REG_PIOC_PER = 0x00080000;
+      break;
+    case 45:
+      REG_PIOC_OER = 0x00040000; REG_PIOC_PER = 0x00040000;
+      break;
+    case 46:
+      REG_PIOC_OER = 0x00020000; REG_PIOC_PER = 0x00020000;
+      break;
+    case 47:
+      REG_PIOC_OER = 0x00010000; REG_PIOC_PER = 0x00010000;
+      break;
+    case 48:
+      REG_PIOC_OER = 0x00008000; REG_PIOC_PER = 0x00008000;
+      break;
+    case 49:
+      REG_PIOC_OER = 0x00004000; REG_PIOC_PER = 0x00004000;
+      break;
+    case 50:
+      REG_PIOC_OER = 0x00002000; REG_PIOC_PER = 0x00002000;
+      break;
+    case 51:
+      REG_PIOC_OER = 0x00001000; REG_PIOC_PER = 0x00001000;
+      break;
+    case 52:
+      REG_PIOB_OER = 0x00200000; REG_PIOB_PER = 0x00200000;
+      break;
+    case 53:
+      REG_PIOB_OER = 0x00004000; REG_PIOB_PER = 0x00004000;
+      break;
+    case A0:
+      REG_PIOA_OER = 0x00010000; REG_PIOA_PER = 0x00010000;
+      break;
+    case A1:
+      REG_PIOA_OER = 0x01000000; REG_PIOA_PER = 0x01000000;
+      break;
+    case A2:
+      REG_PIOA_OER = 0x00800000; REG_PIOA_PER = 0x00800000;
+      break;
+    case A3:
+      REG_PIOA_OER = 0x00400000; REG_PIOA_PER = 0x00400000;
+      break;
+    case A4:
+      REG_PIOA_OER = 0x00000040; REG_PIOA_PER = 0x00000040;
+      break;
+    case A5:
+      REG_PIOA_OER = 0x00000010; REG_PIOA_PER = 0x00000010;
+      break;
+    case A6:
+      REG_PIOA_OER = 0x00000008; REG_PIOA_PER = 0x00000008;
+      break;
+    case A7:
+      REG_PIOA_OER = 0x00000004; REG_PIOA_PER = 0x00000004;
+      break;
+    case A8:
+      REG_PIOB_OER = 0x00020000; REG_PIOB_PER = 0x00020000;
+      break;
+    case A9:
+      REG_PIOB_OER = 0x00040000; REG_PIOB_PER = 0x00040000;
+      break;
+    case A10:
+      REG_PIOB_OER = 0x00080000; REG_PIOB_PER = 0x00080000;
+      break;
+    case A11:
+      REG_PIOB_OER = 0x00100000; REG_PIOB_PER = 0x00100000;
+      break;
+  }
+}
+
+void RapidFireIOclass::HStoggleIOstate(uint8_t pin) {
+  uint32_t data;
+  switch (pin) {
+    case 0:
+      data = REG_PIOA_OSR; data &= 0x00000100; if (data != 0) {
+        REG_PIOA_ODR = 0x00000100; REG_PIOA_PDR = 0x00000100;
+      } else {
+        REG_PIOA_OER = 0x00000100; REG_PIOA_PER = 0x00000100;
+      }
+      break;
+    case 1:
+      data = REG_PIOA_OSR; data &= 0x00000200; if (data != 0) {
+        REG_PIOA_ODR = 0x00000200; REG_PIOA_PDR = 0x00000200;
+      } else {
+        REG_PIOA_OER = 0x00000200; REG_PIOA_PER = 0x00000200;
+      }
+      break;
+    case 2:
+      data = REG_PIOB_OSR; data &= 0x02000000; if (data != 0) {
+        REG_PIOB_ODR = 0x02000000; REG_PIOB_PDR = 0x02000000;
+      } else {
+        REG_PIOB_OER = 0x02000000; REG_PIOB_PER = 0x02000000;
+      }
+      break;
+    case 3:
+      data = REG_PIOC_OSR; data &= 0x10000000; if (data != 0) {
+        REG_PIOC_ODR = 0x10000000; REG_PIOC_PDR = 0x10000000;
+      } else {
+        REG_PIOC_OER = 0x10000000; REG_PIOC_PER = 0x10000000;
+      }
+      break;
+    case 4:
+      data = REG_PIOA_OSR; data &= 0x20000000; if (data != 0) {
+        REG_PIOA_ODR = 0x20000000; REG_PIOA_PDR = 0x20000000;
+      } else {
+        REG_PIOA_OER = 0x20000000; REG_PIOA_PER = 0x20000000;
+      }
+      break;
+    case 5:
+      data = REG_PIOC_OSR; data &= 0x02000000; if (data != 0) {
+        REG_PIOC_ODR = 0x02000000; REG_PIOC_PDR = 0x02000000;
+      } else {
+        REG_PIOC_OER = 0x02000000; REG_PIOC_PER = 0x02000000;
+      }
+      break;
+    case 6:
+      data = REG_PIOC_OSR; data &= 0x01000000; if (data != 0) {
+        REG_PIOC_ODR = 0x01000000; REG_PIOC_PDR = 0x01000000;
+      } else {
+        REG_PIOC_OER = 0x01000000; REG_PIOC_PER = 0x01000000;
+      }
+      break;
+    case 7:
+      data = REG_PIOC_OSR; data &= 0x00800000; if (data != 0) {
+        REG_PIOC_ODR = 0x00800000; REG_PIOC_PDR = 0x00800000;
+      } else {
+        REG_PIOC_OER = 0x00800000; REG_PIOC_PER = 0x00800000;
+      }
+      break;
+    case 8:
+      data = REG_PIOC_OSR; data &= 0x00400000; if (data != 0) {
+        REG_PIOC_ODR = 0x00400000; REG_PIOC_PDR = 0x00400000;
+      } else {
+        REG_PIOC_OER = 0x00400000; REG_PIOC_PER = 0x00400000;
+      }
+      break;
+    case 9:
+      data = REG_PIOC_OSR; data &= 0x00200000; if (data != 0) {
+        REG_PIOC_ODR = 0x00200000; REG_PIOC_PDR = 0x00200000;
+      } else {
+        REG_PIOC_OER = 0x00200000; REG_PIOC_PER = 0x00200000;
+      }
+      break;
+    case 10:
+      data = REG_PIOA_OSR; data &= 0x10000000; if (data != 0) {
+        REG_PIOA_ODR = 0x10000000; REG_PIOA_PDR = 0x10000000;
+      } else {
+        REG_PIOA_OER = 0x10000000; REG_PIOA_PER = 0x10000000;
+      }
+      break;
+    case 11:
+      data = REG_PIOD_OSR; data &= 0x00000080; if (data != 0) {
+        REG_PIOD_ODR = 0x00000080; REG_PIOD_PDR = 0x00000080;
+      } else {
+        REG_PIOD_OER = 0x00000080; REG_PIOD_PER = 0x00000080;
+      }
+      break;
+    case 12:
+      data = REG_PIOD_OSR; data &= 0x00000100; if (data != 0) {
+        REG_PIOD_ODR = 0x00000100; REG_PIOD_PDR = 0x00000100;
+      } else {
+        REG_PIOD_OER = 0x00000100; REG_PIOD_PER = 0x00000100;
+      }
+      break;
+    case 13:
+      data = REG_PIOB_OSR; data &= 0x08000000; if (data != 0) {
+        REG_PIOB_ODR = 0x08000000; REG_PIOB_PDR = 0x08000000;
+      } else {
+        REG_PIOB_OER = 0x08000000; REG_PIOB_PER = 0x08000000;
+      }
+      break;
+    case 14:
+      data = REG_PIOD_OSR; data &= 0x00000010; if (data != 0) {
+        REG_PIOD_ODR = 0x00000010; REG_PIOD_PDR = 0x00000010;
+      } else {
+        REG_PIOD_OER = 0x00000010; REG_PIOD_PER = 0x00000010;
+      }
+      break;
+    case 15:
+      data = REG_PIOD_OSR; data &= 0x00000020; if (data != 0) {
+        REG_PIOD_ODR = 0x00000020; REG_PIOD_PDR = 0x00000020;
+      } else {
+        REG_PIOD_OER = 0x00000020; REG_PIOD_PER = 0x00000020;
+      }
+      break;
+    case 16:
+      data = REG_PIOA_OSR; data &= 0x00002000; if (data != 0) {
+        REG_PIOA_ODR = 0x00002000; REG_PIOA_PDR = 0x00002000;
+      } else {
+        REG_PIOA_OER = 0x00002000; REG_PIOA_PER = 0x00002000;
+      }
+      break;
+    case 17:
+      data = REG_PIOA_OSR; data &= 0x00001000; if (data != 0) {
+        REG_PIOA_ODR = 0x00001000; REG_PIOA_PDR = 0x00001000;
+      } else {
+        REG_PIOA_OER = 0x00001000; REG_PIOA_PER = 0x00001000;
+      }
+      break;
+    case 18:
+      data = REG_PIOA_OSR; data &= 0x00000800; if (data != 0) {
+        REG_PIOA_ODR = 0x00000800; REG_PIOA_PDR = 0x00000800;
+      } else {
+        REG_PIOA_OER = 0x00000800; REG_PIOA_PER = 0x00000800;
+      }
+      break;
+    case 19:
+      data = REG_PIOA_OSR; data &= 0x00000400; if (data != 0) {
+        REG_PIOA_ODR = 0x00000400; REG_PIOA_PDR = 0x00000400;
+      } else {
+        REG_PIOA_OER = 0x00000400; REG_PIOA_PER = 0x00000400;
+      }
+      break;
+    case 20:
+      data = REG_PIOB_OSR; data &= 0x00001000; if (data != 0) {
+        REG_PIOB_ODR = 0x00001000; REG_PIOB_PDR = 0x00001000;
+      } else {
+        REG_PIOB_OER = 0x00001000; REG_PIOB_PER = 0x00001000;
+      }
+      break;
+    case 21:
+      data = REG_PIOB_OSR; data &= 0x00002000; if (data != 0) {
+        REG_PIOB_ODR = 0x00002000; REG_PIOB_PDR = 0x00002000;
+      } else {
+        REG_PIOB_OER = 0x00002000; REG_PIOB_PER = 0x00002000;
+      }
+      break;
+    case 22:
+      data = REG_PIOB_OSR; data &= 0x04000000; if (data != 0) {
+        REG_PIOB_ODR = 0x04000000; REG_PIOB_PDR = 0x04000000;
+      } else {
+        REG_PIOB_OER = 0x04000000; REG_PIOB_PER = 0x04000000;
+      }
+      break;
+    case 23:
+      data = REG_PIOA_OSR; data &= 0x00004000; if (data != 0) {
+        REG_PIOA_ODR = 0x00004000; REG_PIOA_PDR = 0x00004000;
+      } else {
+        REG_PIOA_OER = 0x00004000; REG_PIOA_PER = 0x00004000;
+      }
+      break;
+    case 24:
+      data = REG_PIOA_OSR; data &= 0x00008000; if (data != 0) {
+        REG_PIOA_ODR = 0x00008000; REG_PIOA_PDR = 0x00008000;
+      } else {
+        REG_PIOA_OER = 0x00008000; REG_PIOA_PER = 0x00008000;
+      }
+      break;
+    case 25:
+      data = REG_PIOD_OSR; data &= 0x00000001; if (data != 0) {
+        REG_PIOD_ODR = 0x00000001; REG_PIOD_PDR = 0x00000001;
+      } else {
+        REG_PIOD_OER = 0x00000001; REG_PIOD_PER = 0x00000001;
+      }
+      break;
+    case 26:
+      data = REG_PIOD_OSR; data &= 0x00000002; if (data != 0) {
+        REG_PIOD_ODR = 0x00000002; REG_PIOD_PDR = 0x00000002;
+      } else {
+        REG_PIOD_OER = 0x00000002; REG_PIOD_PER = 0x00000002;
+      }
+      break;
+    case 27:
+      data = REG_PIOD_OSR; data &= 0x00000004; if (data != 0) {
+        REG_PIOD_ODR = 0x00000004; REG_PIOD_PDR = 0x00000004;
+      } else {
+        REG_PIOD_OER = 0x00000004; REG_PIOD_PER = 0x00000004;
+      }
+      break;
+    case 28:
+      data = REG_PIOD_OSR; data &= 0x00000008; if (data != 0) {
+        REG_PIOD_ODR = 0x00000008; REG_PIOD_PDR = 0x00000008;
+      } else {
+        REG_PIOD_OER = 0x00000008; REG_PIOD_PER = 0x00000008;
+      }
+      break;
+    case 29:
+      data = REG_PIOD_OSR; data &= 0x00000040; if (data != 0) {
+        REG_PIOD_ODR = 0x00000040; REG_PIOD_PDR = 0x00000040;
+      } else {
+        REG_PIOD_OER = 0x00000040; REG_PIOD_PER = 0x00000040;
+      }
+      break;
+    case 30:
+      data = REG_PIOD_OSR; data &= 0x00000200; if (data != 0) {
+        REG_PIOD_ODR = 0x00000200; REG_PIOD_PDR = 0x00000200;
+      } else {
+        REG_PIOD_OER = 0x00000200; REG_PIOD_PER = 0x00000200;
+      }
+      break;
+    case 31:
+      data = REG_PIOA_OSR; data &= 0x00000080; if (data != 0) {
+        REG_PIOA_ODR = 0x00000080; REG_PIOA_PDR = 0x00000080;
+      } else {
+        REG_PIOA_OER = 0x00000080; REG_PIOA_PER = 0x00000080;
+      }
+      break;
+    case 32:
+      data = REG_PIOD_OSR; data &= 0x00000400; if (data != 0) {
+        REG_PIOD_ODR = 0x00000400; REG_PIOD_PDR = 0x00000400;
+      } else {
+        REG_PIOD_OER = 0x00000400; REG_PIOD_PER = 0x00000400;
+      }
+      break;
+    case 33:
+      data = REG_PIOC_OSR; data &= 0x00000002; if (data != 0) {
+        REG_PIOC_ODR = 0x00000002; REG_PIOC_PDR = 0x00000002;
+      } else {
+        REG_PIOC_OER = 0x00000002; REG_PIOC_PER = 0x00000002;
+      }
+      break;
+    case 34:
+      data = REG_PIOC_OSR; data &= 0x00000004; if (data != 0) {
+        REG_PIOC_ODR = 0x00000004; REG_PIOC_PDR = 0x00000004;
+      } else {
+        REG_PIOC_OER = 0x00000004; REG_PIOC_PER = 0x00000004;
+      }
+      break;
+    case 35:
+      data = REG_PIOC_OSR; data &= 0x00000008; if (data != 0) {
+        REG_PIOC_ODR = 0x00000008; REG_PIOC_PDR = 0x00000008;
+      } else {
+        REG_PIOC_OER = 0x00000008; REG_PIOC_PER = 0x00000008;
+      }
+      break;
+    case 36:
+      data = REG_PIOC_OSR; data &= 0x00000010; if (data != 0) {
+        REG_PIOC_ODR = 0x00000010; REG_PIOC_PDR = 0x00000010;
+      } else {
+        REG_PIOC_OER = 0x00000010; REG_PIOC_PER = 0x00000010;
+      }
+      break;
+    case 37:
+      data = REG_PIOC_OSR; data &= 0x00000020; if (data != 0) {
+        REG_PIOC_ODR = 0x00000020; REG_PIOC_PDR = 0x00000020;
+      } else {
+        REG_PIOC_OER = 0x00000020; REG_PIOC_PER = 0x00000020;
+      }
+      break;
+    case 38:
+      data = REG_PIOC_OSR; data &= 0x00000040; if (data != 0) {
+        REG_PIOC_ODR = 0x00000040; REG_PIOC_PDR = 0x00000040;
+      } else {
+        REG_PIOC_OER = 0x00000040; REG_PIOC_PER = 0x00000040;
+      }
+      break;
+    case 39:
+      data = REG_PIOC_OSR; data &= 0x00000080; if (data != 0) {
+        REG_PIOC_ODR = 0x00000080; REG_PIOC_PDR = 0x00000080;
+      } else {
+        REG_PIOC_OER = 0x00000080; REG_PIOC_PER = 0x00000080;
+      }
+      break;
+    case 40:
+      data = REG_PIOC_OSR; data &= 0x00000100; if (data != 0) {
+        REG_PIOC_ODR = 0x00000100; REG_PIOC_PDR = 0x00000100;
+      } else {
+        REG_PIOC_OER = 0x00000100; REG_PIOC_PER = 0x00000100;
+      }
+      break;
+    case 41:
+      data = REG_PIOC_OSR; data &= 0x00000200; if (data != 0) {
+        REG_PIOC_ODR = 0x00000200; REG_PIOC_PDR = 0x00000200;
+      } else {
+        REG_PIOC_OER = 0x00000200; REG_PIOC_PER = 0x00000200;
+      }
+      break;
+    case 42:
+      data = REG_PIOA_OSR; data &= 0x00080000; if (data != 0) {
+        REG_PIOA_ODR = 0x00080000; REG_PIOA_PDR = 0x00080000;
+      } else {
+        REG_PIOA_OER = 0x00080000; REG_PIOA_PER = 0x00080000;
+      }
+      break;
+    case 43:
+      data = REG_PIOA_OSR; data &= 0x00100000; if (data != 0) {
+        REG_PIOA_ODR = 0x00100000; REG_PIOA_PDR = 0x00100000;
+      } else {
+        REG_PIOA_OER = 0x00100000; REG_PIOA_PER = 0x00100000;
+      }
+      break;
+    case 44:
+      data = REG_PIOC_OSR; data &= 0x00080000; if (data != 0) {
+        REG_PIOC_ODR = 0x00080000; REG_PIOC_PDR = 0x00080000;
+      } else {
+        REG_PIOC_OER = 0x00080000; REG_PIOC_PER = 0x00080000;
+      }
+      break;
+    case 45:
+      data = REG_PIOC_OSR; data &= 0x00040000; if (data != 0) {
+        REG_PIOC_ODR = 0x00040000; REG_PIOC_PDR = 0x00040000;
+      } else {
+        REG_PIOC_OER = 0x00040000; REG_PIOC_PER = 0x00040000;
+      }
+      break;
+    case 46:
+      data = REG_PIOC_OSR; data &= 0x00020000; if (data != 0) {
+        REG_PIOC_ODR = 0x00020000; REG_PIOC_PDR = 0x00020000;
+      } else {
+        REG_PIOC_OER = 0x00020000; REG_PIOC_PER = 0x00020000;
+      }
+      break;
+    case 47:
+      data = REG_PIOC_OSR; data &= 0x00010000; if (data != 0) {
+        REG_PIOC_ODR = 0x00010000; REG_PIOC_PDR = 0x00010000;
+      } else {
+        REG_PIOC_OER = 0x00010000; REG_PIOC_PER = 0x00010000;
+      }
+      break;
+    case 48:
+      data = REG_PIOC_OSR; data &= 0x00008000; if (data != 0) {
+        REG_PIOC_ODR = 0x00008000; REG_PIOC_PDR = 0x00008000;
+      } else {
+        REG_PIOC_OER = 0x00008000; REG_PIOC_PER = 0x00008000;
+      }
+      break;
+    case 49:
+      data = REG_PIOC_OSR; data &= 0x00004000; if (data != 0) {
+        REG_PIOC_ODR = 0x00004000; REG_PIOC_PDR = 0x00004000;
+      } else {
+        REG_PIOC_OER = 0x00004000; REG_PIOC_PER = 0x00004000;
+      }
+      break;
+    case 50:
+      data = REG_PIOC_OSR; data &= 0x00002000; if (data != 0) {
+        REG_PIOC_ODR = 0x00002000; REG_PIOC_PDR = 0x00002000;
+      } else {
+        REG_PIOC_OER = 0x00002000; REG_PIOC_PER = 0x00002000;
+      }
+      break;
+    case 51:
+      data = REG_PIOC_OSR; data &= 0x00001000; if (data != 0) {
+        REG_PIOC_ODR = 0x00001000; REG_PIOC_PDR = 0x00001000;
+      } else {
+        REG_PIOC_OER = 0x00001000; REG_PIOC_PER = 0x00001000;
+      }
+      break;
+    case 52:
+      data = REG_PIOB_OSR; data &= 0x00200000; if (data != 0) {
+        REG_PIOB_ODR = 0x00200000; REG_PIOB_PDR = 0x00200000;
+      } else {
+        REG_PIOB_OER = 0x00200000; REG_PIOB_PER = 0x00200000;
+      }
+      break;
+    case 53:
+      data = REG_PIOB_OSR; data &= 0x00004000; if (data != 0) {
+        REG_PIOB_ODR = 0x00004000; REG_PIOB_PDR = 0x00004000;
+      } else {
+        REG_PIOB_OER = 0x00004000; REG_PIOB_PER = 0x00004000;
+      }
+      break;
+    case A0:
+      data = REG_PIOA_OSR; data &= 0x00010000; if (data != 0) {
+        REG_PIOA_ODR = 0x00010000; REG_PIOA_PDR = 0x00010000;
+      } else {
+        REG_PIOA_OER = 0x00010000; REG_PIOA_PER = 0x00010000;
+      }
+      break;
+    case A1:
+      data = REG_PIOA_OSR; data &= 0x01000000; if (data != 0) {
+        REG_PIOA_ODR = 0x01000000; REG_PIOA_PDR = 0x01000000;
+      } else {
+        REG_PIOA_OER = 0x01000000; REG_PIOA_PER = 0x01000000;
+      }
+      break;
+    case A2:
+    data = REG_PIOA_OSR; data &= 0x00800000; if (data != 0) {
+        REG_PIOA_ODR = 0x00800000; REG_PIOA_PDR = 0x00800000;
+      } else {
+        REG_PIOA_OER = 0x00800000; REG_PIOA_PER = 0x00800000;
+      }
+      break;
+    case A3:
+      data = REG_PIOA_OSR; data &= 0x00400000; if (data != 0) {
+        REG_PIOA_ODR = 0x00400000; REG_PIOA_PDR = 0x00400000;
+      } else {
+        REG_PIOA_OER = 0x00400000; REG_PIOA_PER = 0x00400000;
+      }
+      break;
+    case A4:
+      data = REG_PIOA_OSR; data &= 0x00000040; if (data != 0) {
+        REG_PIOA_ODR = 0x00000040; REG_PIOA_PDR = 0x00000040;
+      } else {
+        REG_PIOA_OER = 0x00000040; REG_PIOA_PER = 0x00000040;
+      }
+      break;
+    case A5:
+      data = REG_PIOA_OSR; data &= 0x00000010; if (data != 0) {
+        REG_PIOA_ODR = 0x00000010; REG_PIOA_PDR = 0x00000010;
+      } else {
+        REG_PIOA_OER = 0x00000010; REG_PIOA_PER = 0x00000010;
+      }
+      break;
+    case A6:
+      data = REG_PIOA_OSR; data &= 0x00000008; if (data != 0) {
+        REG_PIOA_ODR = 0x00000008; REG_PIOA_PDR = 0x00000008;
+      } else {
+        REG_PIOA_OER = 0x00000008; REG_PIOA_PER = 0x00000008;
+      }
+      break;
+    case A7:
+      data = REG_PIOA_OSR; data &= 0x00000004; if (data != 0) {
+        REG_PIOA_ODR = 0x00000004; REG_PIOA_PDR = 0x00000004;
+      } else {
+        REG_PIOA_OER = 0x00000004; REG_PIOA_PER = 0x00000004;
+      }
+      break;
+    case A8:
+      data = REG_PIOB_OSR; data &= 0x00020000; if (data != 0) {
+        REG_PIOB_ODR = 0x00020000; REG_PIOB_PDR = 0x00020000;
+      } else {
+        REG_PIOB_OER = 0x00020000; REG_PIOB_PER = 0x00020000;
+      }
+      break;
+    case A9:
+      data = REG_PIOB_OSR; data &= 0x00040000; if (data != 0) {
+        REG_PIOB_ODR = 0x00040000; REG_PIOB_PDR = 0x00040000;
+      } else {
+        REG_PIOB_OER = 0x00040000; REG_PIOB_PER = 0x00040000;
+      }
+      break;
+    case A10:
+      data = REG_PIOB_OSR; data &= 0x00080000; if (data != 0) {
+        REG_PIOB_ODR = 0x00080000; REG_PIOB_PDR = 0x00080000;
+      } else {
+        REG_PIOB_OER = 0x00080000; REG_PIOB_PER = 0x00080000;
+      }
+      break;
+    case A11:
+      data = REG_PIOB_OSR; data &= 0x00100000; if (data != 0) {
+        REG_PIOB_ODR = 0x00100000; REG_PIOB_PDR = 0x00100000;
+      } else {
+        REG_PIOB_OER = 0x00100000; REG_PIOB_PER = 0x00100000;
+      }
+      break;
+  }
+}
+
+void RapidFireIOclass::HSpinMode(uint8_t pin, uint8_t state) {
+  if (state == INPUT || state == INPUT_PULLUP) {
+    HSsetInputState(pin);
+    if (state == INPUT_PULLUP) {
+      HSdigitalWrite(pin, HIGH);
+    }
+  }
+  else if (state == OUTPUT) {
+    HSsetOutputState(pin);
+  }
+}
+
+void RapidFireIOclass::HSdigitalWrite(uint8_t pin, uint8_t state) {
+  if (state == LOW) {
+    HSdigitalClear(pin);
+  }
+  else {
+    HSdigitalSet(pin);
+  }
+}
+
+uint32_t RapidFireIOclass::HSdigitalRead(uint8_t pin) {
+  uint32_t data = 0;
+  switch (pin) {
+    case 0:
+      data = REG_PIOA_PDSR; data &= 0x00000100;
+      break;
+    case 1:
+      data = REG_PIOA_PDSR; data &= 0x00000200;
+      break;
+    case 2:
+      data = REG_PIOB_PDSR; data &= 0x02000000;
+      break;
+    case 3:
+      data = REG_PIOC_PDSR; data &= 0x10000000;
+      break;
+    case 4:
+      data = REG_PIOA_PDSR; data &= 0x20000000;
+      break;
+    case 5:
+      data = REG_PIOC_PDSR; data &= 0x02000000;
+      break;
+    case 6:
+      data = REG_PIOC_PDSR; data &= 0x01000000;
+      break;
+    case 7:
+      data = REG_PIOC_PDSR; data &= 0x00800000;
+      break;
+    case 8:
+      data = REG_PIOC_PDSR; data &= 0x00400000;
+      break;
+    case 9:
+      data = REG_PIOC_PDSR; data &= 0x00200000;
+      break;
+    case 10:
+      data = REG_PIOA_PDSR; data &= 0x10000000;
+      break;
+    case 11:
+      data = REG_PIOD_PDSR; data &= 0x00000080;
+      break;
+    case 12:
+      data = REG_PIOD_PDSR; data &= 0x00000100;
+      break;
+    case 13:
+      data = REG_PIOB_PDSR; data &= 0x08000000;
+      break;
+    case 14:
+      data = REG_PIOD_PDSR; data &= 0x00000010;
+      break;
+    case 15:
+      data = REG_PIOD_PDSR; data &= 0x00000020;
+      break;
+    case 16:
+      data = REG_PIOA_PDSR; data &= 0x00002000;
+      break;
+    case 17:
+      data = REG_PIOA_PDSR; data &= 0x00001000;
+      break;
+    case 18:
+      data = REG_PIOA_PDSR; data &= 0x00000800;
+      break;
+    case 19:
+      data = REG_PIOA_PDSR; data &= 0x00000400;
+      break;
+    case 20:
+      data = REG_PIOB_PDSR; data &= 0x00001000;
+      break;
+    case 21:
+      data = REG_PIOB_PDSR; data &= 0x00002000;
+      break;
+    case 22:
+      data = REG_PIOB_PDSR; data &= 0x04000000;
+      break;
+    case 23:
+      data = REG_PIOA_PDSR; data &= 0x00004000;
+      break;
+    case 24:
+      data = REG_PIOA_PDSR; data &= 0x00008000;
+      break;
+    case 25:
+      data = REG_PIOD_PDSR; data &= 0x00000001;
+      break;
+    case 26:
+      data = REG_PIOD_PDSR; data &= 0x00000002;
+      break;
+    case 27:
+      data = REG_PIOD_PDSR; data &= 0x00000004;
+      break;
+    case 28:
+      data = REG_PIOD_PDSR; data &= 0x00000008;
+      break;
+    case 29:
+      data = REG_PIOD_PDSR; data &= 0x00000040;
+      break;
+    case 30:
+      data = REG_PIOD_PDSR; data &= 0x00000200;
+      break;
+    case 31:
+      data = REG_PIOA_PDSR; data &= 0x00000080;
+      break;
+    case 32:
+      data = REG_PIOD_PDSR; data &= 0x00000400;
+      break;
+    case 33:
+      data = REG_PIOC_PDSR; data &= 0x00000002;
+      break;
+    case 34:
+      data = REG_PIOC_PDSR; data &= 0x00000004;
+      break;
+    case 35:
+      data = REG_PIOC_PDSR; data &= 0x00000008;
+      break;
+    case 36:
+      data = REG_PIOC_PDSR; data &= 0x00000010;
+      break;
+    case 37:
+      data = REG_PIOC_PDSR; data &= 0x00000020;
+      break;
+    case 38:
+      data = REG_PIOC_PDSR; data &= 0x00000040;
+      break;
+    case 39:
+      data = REG_PIOC_PDSR; data &= 0x00000080;
+      break;
+    case 40:
+      data = REG_PIOC_PDSR; data &= 0x00000100;
+      break;
+    case 41:
+      data = REG_PIOC_PDSR; data &= 0x00000200;
+      break;
+    case 42:
+      data = REG_PIOA_PDSR; data &= 0x00080000;
+      break;
+    case 43:
+      data = REG_PIOA_PDSR; data &= 0x00100000;
+      break;
+    case 44:
+      data = REG_PIOC_PDSR; data &= 0x00080000;
+      break;
+    case 45:
+      data = REG_PIOC_PDSR; data &= 0x00040000;
+      break;
+    case 46:
+      data = REG_PIOC_PDSR; data &= 0x00020000;
+      break;
+    case 47:
+      data = REG_PIOC_PDSR; data &= 0x00010000;
+      break;
+    case 48:
+      data = REG_PIOC_PDSR; data &= 0x00008000;
+      break;
+    case 49:
+      data = REG_PIOC_PDSR; data &= 0x00004000;
+      break;
+    case 50:
+      data = REG_PIOC_PDSR; data &= 0x00002000;
+      break;
+    case 51:
+      data = REG_PIOC_PDSR; data &= 0x00001000;
+      break;
+    case 52:
+      data = REG_PIOB_PDSR; data &= 0x00200000;
+      break;
+    case 53:
+      data = REG_PIOB_PDSR; data &= 0x00004000;
+      break;
+    case A0:
+      data = REG_PIOA_PDSR; data &= 0x00010000;
+      break;
+    case A1:
+      data = REG_PIOA_PDSR; data &= 0x01000000;
+      break;
+    case A2:
+      data = REG_PIOA_PDSR; data &= 0x00800000;
+      break;
+    case A3:
+      data = REG_PIOA_PDSR; data &= 0x00400000;
+      break;
+    case A4:
+      data = REG_PIOA_PDSR; data &= 0x00000040;
+      break;
+    case A5:
+      data = REG_PIOA_PDSR; data &= 0x00000010;
+      break;
+    case A6:
+      data = REG_PIOA_PDSR; data &= 0x00000008;
+      break;
+    case A7:
+      data = REG_PIOA_PDSR; data &= 0x00000004;
+      break;
+    case A8:
+      data = REG_PIOB_PDSR; data &= 0x00020000;
+      break;
+    case A9:
+      data = REG_PIOB_PDSR; data &= 0x00040000;
+      break;
+    case A10:
+      data = REG_PIOB_PDSR; data &= 0x00080000;
+      break;
+    case A11:
+      data = REG_PIOB_PDSR; data &= 0x00100000;
+      break;
+  }
+  if (data == 0) {
+    return LOW;
+  }
+  else {
+    return HIGH;
+  }
+}
+
 void RapidFireIOclass::init() {
   for (int i = 0; i <= 53; i++) {
     pinMode(i, INPUT);
@@ -14993,6 +19954,195 @@ uint8_t RapidFireIOclass::ReadPinPB4() {
 
 uint8_t RapidFireIOclass::ReadPinPB5() {
   uint8_t data = PINB; data &= 0x20; return data;
+}
+
+void RapidFireIOclass::HSdigitalSet(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      PORTB |= 0x01;
+      break;
+    case 1:
+      PORTB |= 0x02;
+      break;
+    case 2:
+      PORTB |= 0x04;
+      break;
+    case 3:
+      PORTB |= 0x08;
+      break;
+    case 4:
+      PORTB |= 0x10;
+      break;
+    case 5:
+      PORTB |= 0x20;
+      break;
+  }
+}
+
+void RapidFireIOclass::HSdigitalClear(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      PORTB &= (~0x01);
+      break;
+    case 1:
+      PORTB &= (~0x02);
+      break;
+    case 2:
+      PORTB &= (~0x04);
+      break;
+    case 3:
+      PORTB &= (~0x08);
+      break;
+    case 4:
+      PORTB &= (~0x10);
+      break;
+    case 5:
+      PORTB &= (~0x20);
+      break;
+  }
+}
+
+void RapidFireIOclass::HSdigitalToggle(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      PORTB ^= 0x01;
+      break;
+    case 1:
+      PORTB ^= 0x02;
+      break;
+    case 2:
+      PORTB ^= 0x04;
+      break;
+    case 3:
+      PORTB ^= 0x08;
+      break;
+    case 4:
+      PORTB ^= 0x10;
+      break;
+    case 5:
+      PORTB ^= 0x20;
+      break;
+  }
+}
+
+void RapidFireIOclass::HSsetInputState(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      DDRB &= (~0x01);
+      break;
+    case 1:
+      DDRB &= (~0x02);
+      break;
+    case 2:
+      DDRB &= (~0x04);
+      break;
+    case 3:
+      DDRB &= (~0x08);
+      break;
+    case 4:
+      DDRB &= (~0x10);
+      break;
+    case 5:
+      DDRB &= (~0x20);
+      break;
+  }
+}
+
+void RapidFireIOclass::HSsetOutputState(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      DDRB |= 0x01;
+      break;
+    case 1:
+      DDRB |= 0x02;
+      break;
+    case 2:
+      DDRB |= 0x04;
+      break;
+    case 3:
+      DDRB |= 0x08;
+      break;
+    case 4:
+      DDRB |= 0x10;
+      break;
+    case 5:
+      DDRB |= 0x20;
+      break;
+  }
+}
+
+void RapidFireIOclass::HStoggleIOstate(uint8_t pin) {
+  switch (pin) {
+    case 0:
+      DDRB ^= 0x01;
+      break;
+    case 1:
+      DDRB ^= 0x02;
+      break;
+    case 2:
+      DDRB ^= 0x04;
+      break;
+    case 3:
+      DDRB ^= 0x08;
+      break;
+    case 4:
+      DDRB ^= 0x10;
+      break;
+    case 5:
+      DDRB ^= 0x20;
+      break;
+  }
+}
+
+void RapidFireIOclass::HSpinMode(uint8_t pin, uint8_t state) {
+  if (state == INPUT || state == INPUT_PULLUP) {
+    HSsetInputState(pin);
+    if (state == INPUT_PULLUP) {
+      HSdigitalWrite(pin, HIGH);
+    }
+  }
+  else if (state == OUTPUT) {
+    HSsetOutputState(pin);
+  }
+}
+
+void RapidFireIOclass::HSdigitalWrite(uint8_t pin, uint8_t state) {
+  if (state == LOW) {
+    HSdigitalClear(pin);
+  }
+  else {
+    HSdigitalSet(pin);
+  }
+}
+
+uint8_t RapidFireIOclass::HSdigitalRead(uint8_t pin) {
+  uint8_t data = 0;
+  switch (pin) {
+    case 0:
+      data = PINB; data &= 0x01;
+      break;
+    case 1:
+      data = PINB; data &= 0x02;
+      break;
+    case 2:
+      data = PINB; data &= 0x04;
+      break;
+    case 3:
+      data = PINB; data &= 0x08;
+      break;
+    case 4:
+      data = PINB; data &= 0x10;
+      break;
+    case 5:
+      data = PINB; data &= 0x20;
+      break;
+  }
+  if (data == 0) {
+    return LOW;
+  }
+  else {
+    return HIGH;
+  }
 }
 
 void RapidFireIOclass::init() {
